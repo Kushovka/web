@@ -15,9 +15,9 @@ const RightContent = () => {
           <div>
             <Button
               title={"active quest"}
-              color={"#E84A4A"}
-              opacity={"70%"}
+              color={"rgba(232, 74, 74, 0.7)"}
               className={"w-[196px]"}
+              colortext={"#ffffff"}
             />
             <div className="bg-red01/10 w-[196px] ">
               <p className="iceland-text tracking-normal  text-[14px] text-gray01 py-[8px] px-[10px]">

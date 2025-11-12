@@ -1,12 +1,16 @@
 import buttonComponent from "../assets/images/buttonComponent/star.svg";
 
-const Button = ({ title, color, opacity, className }) => {
+const Button = ({ title, color, className, colortext, onClick }) => {
   return (
     <button
-      style={{ backgroundColor: color, opacity: opacity }}
-      className={`relative  font-extrabold text-[18px] big-text text-left px-[4px] py-[2px] group ${className}`}
+      onClick={onClick}
+      style={{ backgroundColor: color }}
+      className={`relative z-0 font-extrabold text-[18px] big-text text-left px-[6px] py-[4px] group ${className} overflow-hidden`}
     >
-      <span className="text-black01 group-hover:text-white transition-colorss duration-300">
+      <span
+        style={{ color: colortext }}
+        className="text-black01 relative z-10 group-hover:text-white transition-colors duration-300 opacity-100"
+      >
         {title}
       </span>
       <div className="absolute top-1/2 -translate-y-1/2 -right-3">

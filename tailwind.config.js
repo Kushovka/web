@@ -14,9 +14,18 @@ export default {
         black01: "#000003",
         black02: "#242425",
         black03: "#333333",
+        black04: "#080306",
+        black05: "#010103",
         gray01: "#7A7A7A",
         gray02: "#B2B7BA",
         gray03: "#262626",
+      },
+      transform: {
+        "preserve-3d": "preserve-3d",
+      },
+      rotate: {
+        "x-5": "rotateX(5deg)",
+        "y-10": "rotateY(10deg)",
       },
     },
   },
