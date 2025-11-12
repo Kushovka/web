@@ -1,6 +1,7 @@
 import imgAvatar from "../assets/images/homePage/avatar.png";
 import Button from "./Button";
 import connectImg from "../assets/images/buttonComponent/connect.svg";
+import { IoIosBluetooth } from "react-icons/io";
 
 const LeftContent = ({
   name,
@@ -14,7 +15,12 @@ const LeftContent = ({
       <div className=" flex flex-col gap-[20px]">
         <div className="border-frame p-[15px] inline-block relative z-10">
           {/* <div className="sphere-2"></div> */}
-          <img src={imgAvatar} className="block relative z-10" alt="" />
+          <img
+            src={imgAvatar}
+            className="block relative z-10 hover:scale-[1.15] transition-all duration-300"
+            alt=""
+          />
+          
           <span></span>
         </div>
 
@@ -56,7 +62,7 @@ const LeftContent = ({
                 open connection
               </span>
               <div className="absolute top-1/2 -translate-y-1/2 right-0 px-[4px]">
-                <img src={connectImg} alt="" />
+                <IoIosBluetooth className="text-[24px] group-hover:text-white transition-all duration-300" />
               </div>
             </button>
           </div>

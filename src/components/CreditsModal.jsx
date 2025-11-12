@@ -17,7 +17,7 @@ const CreditsModal = () => {
           </h2>
 
           <p className="iceland-text text-[16px] font-normal text-gray02">
-            your name here @handle <br /> <br /> a friend that helped @handle
+            Kirill Kushov @kushovka 
           </p>
         </div>
         <div className="grid grid-cols-2">

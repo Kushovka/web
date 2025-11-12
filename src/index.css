@@ -141,6 +141,8 @@ body {
   border-right: 2px solid #e84a4a;
 }
 
+
+
 @layer components {
   .iceland-text {
     @apply leading-[100%] tracking-[0.075em] font-iceland font-normal uppercase;
