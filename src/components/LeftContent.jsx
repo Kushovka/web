@@ -11,7 +11,7 @@ const LeftContent = ({
   setOpenConnect,
 }) => {
   return (
-    <section className="fixed left-0 top-0 py-[92px] max-w-[290px] pr-[16px] flex flex-col justify-between  h-screen pl-[78px] overflow-y-auto z-10">
+    <section className="fixed left-0 top-0 py-[92px] max-w-[290px] pr-[16px] flex flex-col justify-between  h-screen pl-[78px]  z-10">
       <div className=" flex flex-col gap-[20px]">
         <div className="border-frame p-[15px] inline-block relative z-10">
           {/* <div className="sphere-2"></div> */}
