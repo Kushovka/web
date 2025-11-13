@@ -16,10 +16,12 @@ export default {
         black03: "#333333",
         black04: "#080306",
         black05: "#010103",
+        black06: "#1D1D20",
         gray01: "#7A7A7A",
         gray02: "#B2B7BA",
         gray03: "#262626",
         gold01: "#E8BB4A",
+        blue01: "#429DD1",
       },
       transform: {
         "preserve-3d": "preserve-3d",
@@ -27,6 +29,9 @@ export default {
       rotate: {
         "x-5": "rotateX(5deg)",
         "y-10": "rotateY(10deg)",
+      },
+      clipPath: {
+        "cut-corner": "polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px)",
       },
     },
   },

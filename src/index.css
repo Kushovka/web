@@ -153,6 +153,13 @@ body {
   .iceberg-text {
     @apply font-iceberg leading-[100%] tracking-[0.075em] uppercase;
   }
+  .legendary-card {
+    @apply bg-gold01 shadow-[0_0_20px_rgba(232,187,74,0.8)]
+  }
+  .legendary-card {
+    @apply bg-gold01 shadow-[0_0_20px_rgba(232,187,74,0.8)]
+  }
+
 }
 
 @layer utils {
