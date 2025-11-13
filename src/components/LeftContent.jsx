@@ -9,20 +9,24 @@ const LeftContent = ({
   corporation,
   setOpenForHire,
   setOpenConnect,
+  setOpenContent,
 }) => {
   return (
     <section className="fixed left-0 top-0 py-[92px] max-w-[290px] pr-[16px] flex flex-col justify-between  h-screen pl-[78px]  z-10">
       <div className=" flex flex-col gap-[20px]">
-        <div className="border-frame p-[15px] inline-block relative z-10">
+        <button
+          onClick={() => setOpenContent(6)}
+          className="border-frame p-[15px] inline-block relative z-10"
+        >
           {/* <div className="sphere-2"></div> */}
           <img
             src={imgAvatar}
             className="block relative z-10 hover:scale-[1.15] transition-all duration-300"
             alt=""
           />
-          
+
           <span></span>
-        </div>
+        </button>
 
         <div className="flex flex-col gap-[22px]">
           <div className="flex flex-col gap-[4px] ">
