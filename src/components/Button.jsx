@@ -7,12 +7,12 @@ const Button = ({ title, color, className, colortext, onClick }) => {
       style={{ backgroundColor: color }}
       className={`relative z-0 font-extrabold text-[18px] big-text text-left px-[6px] py-[4px] group ${className} overflow-hidden`}
     >
-      <span
+      <h2
         style={{ color: colortext }}
         className="text-black01 relative z-10 group-hover:text-white transition-colors duration-300 opacity-100"
       >
         {title}
-      </span>
+      </h2>
       <div className="absolute top-1/2 -translate-y-1/2 -right-3">
         <img src={buttonComponent} className="w-[20px]" alt="" />
       </div>

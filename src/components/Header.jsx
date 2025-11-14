@@ -1,8 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
+import sound from "../audio/click2.mp3";
 
-const Header = ({ setOpenCredits }) => {
+const Header = ({ setOpenCredits, isSound }) => {
   const [time, setTime] = useState(new Date());
+  const audioRef = useRef(null);
+
+  function audioClick() {
+    if (isSound && audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.volume = 0.2;
+      audioRef.current.play();
+    }
+    setOpenCredits(true);
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,12 +52,10 @@ const Header = ({ setOpenCredits }) => {
 
       <div className="flex-center gap-[27px]">
         <div>
-          <button
-            onClick={() => setOpenCredits(true)}
-            className=" px-[6px] py-[2px]"
-          >
+          <button onClick={audioClick} className=" px-[6px] py-[2px]">
             <p className="iceberg-text text-[12px] font-normal">credits</p>
           </button>
+          <audio ref={audioRef} src={sound} />
         </div>
         <div className="flex-center gap-[5px]">
           <p className="iceland-text text-[14px] font-normal text-gray01">

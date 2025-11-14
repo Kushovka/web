@@ -12,20 +12,30 @@ import OpenForHireModal from "../components/OpenForHireModal";
 import ConnectModal from "../components/ConnectModal";
 import CreditsModal from "../components/CreditsModal";
 import WhoIsContent from "../components/contents/WhoIsContent";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import FadeIn from "../animations/FadeIn";
+import SettingsModal from "../components/SettingsModal";
 
-const HeroPage = () => {
+const HeroPage = ({toggleMusic, isPlay, toggleSound, isSound}) => {
   const [openContent, setOpenContent] = useState(1);
   const [openForHire, setOpenForHire] = useState(false);
   const [openConnect, setOpenConnect] = useState(false);
   const [openCredits, setOpenCredits] = useState(false);
+  const [openSettings, setOpenSettings] = useState(false);
 
   return (
     <section className="relative h-screen w-full">
       <div
         className="h-screen w-full overflow-hidden"
-        style={{ perspective: "1800px", perspectiveOrigin: "100% 50%" }}
+        style={{
+          perspective: "1800px",
+          perspectiveOrigin:
+            openForHire || openConnect || openCredits
+              ? "right center"  
+              : openSettings
+              ? "bottom center" 
+              : "right center",
+        }}
       >
         {/* sphere */}
         <div className="sphere-1"></div>
@@ -35,27 +45,38 @@ const HeroPage = () => {
           style={{
             transform:
               openForHire || openConnect || openCredits
-                ? "rotateX(0deg) rotateY(-30deg)"
+                ? "rotateX(0deg) rotateY(-30deg)" 
+                : openSettings
+                ? "rotateX(50deg) rotateY(0deg)" 
                 : "rotateX(0deg) rotateY(0deg)",
             transformStyle: "preserve-3d",
             transition: "transform 0.3s ease-in-out",
-            transformOrigin: "right center",
+            transformOrigin:
+              openForHire || openConnect || openCredits
+                ? "right center"
+                : openSettings
+                ? "bottom center"
+                : "right center",
           }}
           className="w-full h-full relative z-0"
         >
-          <Header setOpenCredits={setOpenCredits} />
+          <Header setOpenCredits={setOpenCredits} isSound={isSound} />
           <LeftContent
             setOpenConnect={setOpenConnect}
             setOpenForHire={setOpenForHire}
             setOpenContent={setOpenContent}
+            openContent={openContent}
+            isSound={isSound}
             name={"Kirill Kushov"}
             occupation={"developer"}
             corporation={"freelance"}
           />
-          <RightContent />
+          <RightContent toggleMusic={toggleMusic} isPlay={isPlay} setOpenSettings={setOpenSettings} toggleSound={toggleSound} isSound={isSound} />
           <BottomContent
             openContent={openContent}
             setOpenContent={setOpenContent}
+            toggleSound={toggleSound}
+            isSound={isSound}
           />
           <AnimatePresence mode="wait">
             {openContent === 1 && (
@@ -96,10 +117,11 @@ const HeroPage = () => {
           onClick={() =>
             setOpenForHire(false) ||
             setOpenConnect(false) ||
-            setOpenCredits(false)
+            setOpenCredits(false) ||
+            setOpenSettings(false)
           }
           className={`fixed inset-0 bg-black/50 z-20 transition-opacity duration-500 ${
-            openForHire || openConnect || openCredits
+            openForHire || openConnect || openCredits || openSettings
               ? "opacity-100"
               : "opacity-0 pointer-events-none"
           }`}
@@ -113,6 +135,9 @@ const HeroPage = () => {
 
         {/* CreditsModal */}
         {openCredits && <CreditsModal setOpenCredits={setOpenCredits} />}
+
+        {/* SettingsModal */}
+        {openSettings && <SettingsModal setOpenSettings={setOpenSettings} />}
       </div>
     </section>
   );

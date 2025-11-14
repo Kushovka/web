@@ -1,7 +1,18 @@
-import React from "react";
+import { useRef, useState } from "react";
 import Button from "./Button";
+import sound from "../audio/click.mp3";
 
-const BottomContent = ({ setOpenContent, openContent }) => {
+const BottomContent = ({ setOpenContent, openContent, isSound }) => {
+  const audioRef = useRef(null);
+
+  function audioClick(num) {
+    if (isSound && audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.volume = 0.2;
+      audioRef.current.play();
+    }
+    setOpenContent(num);
+  }
   return (
     <section className="fixed flex items-center justify-center w-screen px-[78px] z-20 pt-[27px] pb-[35px] bottom-0 left-1/2 -translate-x-1/2 ">
       <div className="w-full  flex items-center justify-center gap-[15px] border-red01 leading-[100%]">
@@ -12,7 +23,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
           } `}
         >
           <Button
-            onClick={() => setOpenContent(1)}
+            onClick={() => audioClick(1)}
             title={"beginning"}
             color={
               openContent === 1
@@ -22,6 +33,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
             className={"w-[196px]"}
             colortext={"#ffffff"}
           />
+
           <div
             className={`${
               openContent === 1 ? "bg-red01/20" : "bg-black02/10"
@@ -39,7 +51,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
           } `}
         >
           <Button
-            onClick={() => setOpenContent(2)}
+            onClick={() => audioClick(2)}
             title={"Logs"}
             color={
               openContent === 2
@@ -49,6 +61,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
             className={"w-[196px]"}
             colortext={"#ffffff"}
           />
+
           <div
             className={`${
               openContent === 2 ? "bg-red01/20" : "bg-black02/10"
@@ -66,7 +79,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
           } `}
         >
           <Button
-            onClick={() => setOpenContent(3)}
+            onClick={() => audioClick(3)}
             title={"achievements"}
             color={
               openContent === 3
@@ -76,6 +89,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
             className={"w-[196px]"}
             colortext={"#ffffff"}
           />
+
           <div
             className={`${
               openContent === 3 ? "bg-red01/20" : "bg-black02/10"
@@ -93,7 +107,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
           } `}
         >
           <Button
-            onClick={() => setOpenContent(4)}
+            onClick={() => audioClick(4)}
             title={"creations"}
             color={
               openContent === 4
@@ -103,6 +117,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
             className={`w-[196px]`}
             colortext={"#ffffff"}
           />
+
           <div
             className={`${
               openContent === 4 ? "bg-red01/20" : "bg-black02/10"
@@ -120,7 +135,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
           } `}
         >
           <Button
-            onClick={() => setOpenContent(5)}
+            onClick={() => audioClick(5)}
             title={"games"}
             color={
               openContent === 5
@@ -130,6 +145,7 @@ const BottomContent = ({ setOpenContent, openContent }) => {
             className={"w-[196px]"}
             colortext={"#ffffff"}
           />
+          <audio ref={audioRef} src={sound} />
           <div
             className={`${
               openContent === 5 ? "bg-red01/20" : "bg-black02/10"
