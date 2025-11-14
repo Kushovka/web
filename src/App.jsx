@@ -5,7 +5,7 @@ import bgMusic from "./audio/dark_fantasy.mp3";
 
 const App = () => {
   const [openSystem, setOpenSystem] = useState(false);
-  const [isPlay, setIsPlay] = useState(true);
+  const [isPlay, setIsPlay] = useState(null);
   const [isSound, setIsSound] = useState(true);
   const musicRef = useRef(null);
 
@@ -24,6 +24,10 @@ const App = () => {
   function toggleMusic() {
     setIsPlay(!isPlay);
   }
+  function homeMusic() {
+    setIsPlay(true);
+    setOpenSystem(true);
+  }
 
   function toggleSound() {
     setIsSound(!isSound);
@@ -39,7 +43,7 @@ const App = () => {
           isSound={isSound}
         />
       ) : (
-        <HomePage setOpenSystem={setOpenSystem} />
+        <HomePage setOpenSystem={setOpenSystem} homeMusic={homeMusic} />
       )}
       <audio ref={musicRef} src={bgMusic} />
     </main>

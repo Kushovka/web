@@ -1,4 +1,4 @@
-const HomePage = ({ setOpenSystem }) => {
+const HomePage = ({ setOpenSystem, homeMusic }) => {
   return (
     <section className="relative max-w-max mx-auto  py-[10px] px-[10px]">
       <div className="sphere-1"></div>
@@ -28,7 +28,7 @@ const HomePage = ({ setOpenSystem }) => {
           </div>
           <div>
             <button
-              onClick={() => setOpenSystem(true)}
+              onClick={homeMusic}
               className=" font-extrabold  md:text-[22px] text-red01 border py-[15px] px-[50px] border-red01 big-text hover:bg-red01/40 transition-all duration-300 animate-pulse hover:animate-none"
             >
               enter the system
