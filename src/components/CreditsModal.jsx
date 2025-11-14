@@ -1,5 +1,3 @@
-
-
 const CreditsModal = () => {
   return (
     <section className="fixed z-30 top-1/2 -translate-y-1/2 px-[100px]  left-0 flex flex-col gap-[30px]">
@@ -17,7 +15,7 @@ const CreditsModal = () => {
           </h2>
 
           <p className="iceland-text text-[16px] font-normal text-gray02">
-            Kirill Kushov @kushovka 
+            Kirill Kushov @kushovka
           </p>
         </div>
         <div className="grid grid-cols-2">
@@ -53,11 +51,7 @@ const CreditsModal = () => {
           <h2 className="iceland-text text-[16px] font-normal ">music</h2>
 
           <p className="iceland-text text-[16px] font-normal text-gray02">
-            “tea Fragrance” by Adeline Yeo (HP), <br /> Never forget
-            <br /> <br />
-            “pressure” by Eggy Toast, Shed Roof
-            <br /> <br />
-            “We were kids” by HolinzaPATREON, <br /> never forget
+            “dark fantasy” by voidseer.
           </p>
         </div>
       </div>
