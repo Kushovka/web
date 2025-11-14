@@ -1,18 +1,18 @@
-# 👉 **[BusinessTown](https://businesstown.netlify.app/)** — React + Tailwind CSS + ThreeJS
+# 👉 **[Web app](#)** — React + Tailwind CSS
 <br><br>
-<img width="1791" height="927" alt="b3dfd6fa-5e5b-4a04-ad0f-9163f74a826c" src="https://github.com/user-attachments/assets/c2c44e91-bfd5-4acf-8896-27cba73adc1c" />
+<img width="1791" height="927" alt="b3dfd6fa-5e5b-4a04-ad0f-9163f74a826c" src="https://github.com/user-attachments/assets/137d93e9-068e-492d-bad3-1372c18df05b" />
 <br><br>
 <div>
   <b>EN:<br/>
 <p>
- BusinessTown is a modern multi-page website built on React using advanced frontend technologies
+Modern interactive portfolio website with animations, sound effects, and a custom interface. The project is built from scratch using React, with Vite compilation and Tailwind CSS styling.
 </p>
 </div>
 <br>
 <div>
 <b>RU:<br/>
 <p>
-BusinessTown — современный многостраничный веб-сайт, построенный на React с использованием передовых технологий фронтенда
+Современный интерактивный сайт с анимациями, звуковыми эффектами и кастомным интерфейсом. Проект выполнен с нуля на React, со сборкой Vite и стилизацией через Tailwind CSS.
 </p>
 </div>
 <br>
@@ -21,8 +21,6 @@ BusinessTown — современный многостраничный веб-с
 <div align="center">
   <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
   <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
-   <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white"/>
-   <img src="https://img.shields.io/badge/three.js-%23000000.svg?style=for-the-badge&logo=three.js&logoColor=%234CC1D3"/>
   <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white"/>
 </div>
 <br>
@@ -30,10 +28,13 @@ BusinessTown — современный многостраничный веб-с
 <h1>🚀 Features</h1>
 <br><br>
 <ul>
-  <li>Многостраничная структура с плавной навигацией без перезагрузок</li>
-  <li>Анимации интерфейса с использованием GSAP для улучшения пользовательского опыта</li>
-  <li>3D-элементы и интерактивные визуализации на базе Three.js и R3F</li>
-  <li>Адаптивный дизайн, оптимизированный под любые устройства</li>
+  <li>Навигация по разделам с плавными переходами</li>
+  <li>Звуковые эффекты кликов (можно включать/выключать)</li>
+  <li>Фоновая музыка с контролем громкости</li>
+  <li>Аватар, секции профиля, бейджи и контент-блоки</li>
+  <li>Кастомные UI-компоненты (кнопки, карточки, боковая панель)</li>
+  <li>Фиксированные панели и адаптивная верстка</li>
+  <li>Легкая архитектура и компонентный подход</li>
   <li>Быстрая загрузка и разработка благодаря Vite</li>
 </ul>
 <br><br>
@@ -42,10 +43,10 @@ BusinessTown — современный многостраничный веб-с
 
 ```bash
 # Клонируем репозиторий
-git clone https://github.com/Kushovka/businessTown.git
+git clone https://github.com/Kushovka/web.git
 
 # Переходим в папку проекта
-cd businessTown
+cd web
 
 # Устанавливаем зависимости
 npm install
@@ -55,19 +56,12 @@ npm run dev
 ```
 
 
-# 🚨 Disclaimer
+# 🚧 Статус проекта
 <br><br>
 <div>
-   <b>EN:<br/>
+  
   <p>
-    This project is a personal, non-commercial work created for portfolio purposes only. All brand names, images, and content are used for demonstration and educational purposes. I do not claim ownership of any third-party assets.
-  </p>
-</div>
-<br>
-<div>
-    <b>RU:<br/>
-  <p>
-    Этот проект является личной некоммерческой работой, созданной исключительно для портфолио. Все названия брендов, изображения и контент используются в демонстрационных и учебных целях. Я не претендую на права собственности на сторонние материалы.
+    Проект всё ещё находится в активной разработке. На сегодняшний день это один из моих самых больших, масштабных и интересных проектов, в который я постоянно добавляю новые фичи, анимации и улучшения.
   </p>
 </div>
 <br>
