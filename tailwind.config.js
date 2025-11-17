@@ -22,6 +22,7 @@ export default {
         gray03: "#262626",
         gold01: "#E8BB4A",
         blue01: "#429DD1",
+        purple01: "#B71553",
       },
       transform: {
         "preserve-3d": "preserve-3d",

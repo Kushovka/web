@@ -78,6 +78,18 @@ body {
   transform: translate(50%, -50%);
   filter: blur(100px);
 }
+.sphere-1_purple {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #b71553, #b71553);
+  animation: wander-left 10s ease-in-out infinite;
+  transform: translate(50%, -50%);
+  filter: blur(100px);
+}
 .sphere-2 {
   position: absolute;
   top: 50%;
@@ -86,6 +98,18 @@ body {
   height: 100%;
   border-radius: 50%;
   background: radial-gradient(circle, #e84a4a, #e84a4a);
+  animation: wander-left 10s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+  filter: blur(250px);
+}
+.sphere-2_purple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #b71553, #b71553);
   animation: wander-left 10s ease-in-out infinite;
   transform: translate(-50%, -50%);
   filter: blur(250px);
@@ -141,6 +165,55 @@ body {
   border-right: 2px solid #e84a4a;
 }
 
+.border-frame_purple {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  /* padding: 15px; */
+}
+
+.border-frame_purple::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #b71553;
+  border-left: 2px solid #b71553;
+}
+
+.border-frame_purple::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #b71553;
+  border-right: 2px solid #b71553;
+}
+
+.border-frame_purple span::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #b71553;
+  border-left: 2px solid #b71553;
+}
+
+.border-frame_purple span::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #b71553;
+  border-right: 2px solid #b71553;
+}
 
 @layer components {
   .iceland-text {

@@ -12,6 +12,7 @@ import sound from "../audio/click2.mp3";
 import switchSound from "../audio/switch.mp3";
 
 import clsx from "clsx";
+import { useTheme } from "../hook/useTheme";
 
 const RightContent = ({
   setOpenSettings,
@@ -20,6 +21,8 @@ const RightContent = ({
   toggleSound,
   isSound,
 }) => {
+  const { color } = useTheme();
+
   const audioRef = useRef(null);
   const switchRef = useRef(null);
 
@@ -50,11 +53,18 @@ const RightContent = ({
   return (
     <section className="fixed right-0 top-0 py-[92px] max-w-[290px] pl-[16px] flex flex-col justify-between z-30 h-screen pr-[79px]">
       <div>
-        <div className="w-full border-l-2 flex flex-col gap-[15px] border-red01 leading-[100%]">
+        <div
+          className={clsx(
+            "w-full border-l-2 flex flex-col gap-[15px] leading-[100%]",
+            color === "red" ? "border-red01" : "border-purple01"
+          )}
+        >
           <div>
             <Button
               title={"active quest"}
-              color={"rgba(232, 74, 74, 0.7)"}
+              color={
+                color === "red" ? "rgba(232,74,74,0.8)" : "rgba(183,21,83,0.8)"
+              }
               className={"w-[196px]"}
               colortext={"#ffffff"}
             />
@@ -67,7 +77,12 @@ const RightContent = ({
           <div className="flex flex-col gap-[23px] px-[8px]">
             <div className="flex flex-col gap-[4px]">
               <h2 className="iceland-text text-[14px]">quest name</h2>
-              <p className="big-text text-red01 text-[18px] font-extrabold">
+              <p
+                className={clsx(
+                  "big-text text-[18px] font-extrabold",
+                  color === "red" ? "text-red01" : "text-purple01"
+                )}
+              >
                 React website
               </p>
             </div>
@@ -101,8 +116,9 @@ const RightContent = ({
         <div className="flex items-center justify-between px-[7px] py-[4px]">
           <h2
             className={clsx(
-              "big-text font-extrabold text-[18px] text-red01",
-              isSound ? "opacity-100" : "opacity-50"
+              "big-text font-extrabold text-[18px] transition-opacity duration-300",
+              isSound ? "opacity-100" : "opacity-50",
+              color === "red" ? "text-red01" : "text-purple01"
             )}
           >
             sound effects
@@ -111,16 +127,26 @@ const RightContent = ({
             onClick={soundSwitch}
             className={clsx(
               "border flex items-center justify-center w-[33px] h-[33px]",
-              isSound ? "opacity-100 border-red01" : "opacity-50 border-black03"
+              isSound
+                ? color === "red"
+                  ? "opacity-100 border-red01"
+                  : "opacity-100 border-purple01"
+                : "opacity-50 border-black03"
             )}
           >
             {isSound ? (
-              <IoCheckmarkSharp className="text-red01 text-[24px]" />
+              <IoCheckmarkSharp
+                className={clsx(
+                  "text-[24px]",
+                  color === "red" ? "text-red01" : "text-purple01"
+                )}
+              />
             ) : (
               <IoCloseSharp
                 className={clsx(
-                  "text-red01 text-[24px] transition-opacity duration-300",
-                  isSound ? "opacity-100" : "opacity-50"
+                  "text-[24px] transition-opacity duration-300",
+                  isSound ? "opacity-100" : "opacity-50",
+                  color === "red" ? "text-red01" : "text-purple01"
                 )}
               />
             )}
@@ -130,8 +156,9 @@ const RightContent = ({
         <div className="flex items-center justify-between px-[7px] py-[4px]">
           <h2
             className={clsx(
-              "big-text font-extrabold text-[18px] text-red01 transition-opacity duration-300",
-              isPlay ? "opacity-100" : "opacity-50"
+              "big-text font-extrabold text-[18px] transition-opacity duration-300",
+              isPlay ? "opacity-100" : "opacity-50",
+              color === "red" ? "text-red01" : "text-purple01"
             )}
           >
             music
@@ -140,16 +167,26 @@ const RightContent = ({
             onClick={musicSwitch}
             className={clsx(
               "border  flex items-center justify-center w-[33px] h-[33px] transition-opacity duration-300",
-              isPlay ? "opacity-100 border-red01" : "opacity-50 border-black03"
+              isPlay
+                ? color === "red"
+                  ? "opacity-100 border-red01"
+                  : "opacity-100 border-purple01"
+                : "opacity-50 border-black03"
             )}
           >
             {isPlay ? (
-              <IoCheckmarkSharp className="text-red01 text-[24px]" />
+              <IoCheckmarkSharp
+                className={clsx(
+                  "text-[24px]",
+                  color === "red" ? "text-red01" : "text-purple01"
+                )}
+              />
             ) : (
               <IoCloseSharp
                 className={clsx(
-                  "text-red01 text-[24px] transition-opacity duration-300",
-                  isPlay ? "opacity-100" : "opacity-50"
+                  "text-[24px] transition-opacity duration-300",
+                  isPlay ? "opacity-100" : "opacity-50",
+                  color === "red" ? "text-red01" : "text-purple01"
                 )}
               />
             )}
@@ -159,11 +196,21 @@ const RightContent = ({
           onClick={soundClick}
           className="flex items-center border border-gray03 justify-between px-[7px] py-[4px]"
         >
-          <h2 className="big-text font-extrabold text-[18px] text-red01 ">
+          <h2
+            className={clsx(
+              "big-text font-extrabold text-[18px]",
+              color === "red" ? "text-red01" : "text-purple01"
+            )}
+          >
             visual settings
           </h2>
           <div className=" flex items-center justify-center w-[33px] h-[33px] ">
-            <IoSettingsOutline className="text-red01 text-[24px] " />
+            <IoSettingsOutline
+              className={clsx(
+                "text-[24px]",
+                color === "red" ? "text-red01" : "text-purple01"
+              )}
+            />
           </div>
         </button>
         <audio ref={audioRef} src={sound} />

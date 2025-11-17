@@ -1,4 +1,8 @@
+import clsx from "clsx";
+import { useTheme } from "../hook/useTheme";
+
 const CreditsModal = () => {
+  const { color } = useTheme();
   return (
     <section className="fixed z-30 top-1/2 -translate-y-1/2 px-[100px]  left-0 flex flex-col gap-[30px]">
       <div className="flex flex-col gap-[5px]">
@@ -7,7 +11,12 @@ const CreditsModal = () => {
           Everything involved in this project
         </p>
       </div>
-      <div className="bg-red01 w-full h-[3px]"></div>
+      <div
+        className={clsx(
+          " w-full h-[3px]",
+          color === "red" ? "bg-red01" : "bg-purple01"
+        )}
+      ></div>
       <div className="flex flex-col gap-[45px]">
         <div className="grid grid-cols-2">
           <h2 className="iceland-text text-[16px] font-normal ">

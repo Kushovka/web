@@ -8,14 +8,29 @@ import { IoCloseSharp } from "react-icons/io5";
 import { CiImageOn } from "react-icons/ci";
 
 import polygon from "../../assets/images/creationsContent/polygon.png";
+import { useTheme } from "../../hook/useTheme";
+import clsx from "clsx";
 
 const CreationsContent = () => {
+  const { color } = useTheme();
   return (
     <main className="relative flex items-center justify-center w-full h-screen overflow-hidden px-[290px] py-[92px]">
-      <div className="border-frame w-full h-full inline-block z-10">
+      <div
+        className={clsx(
+          "w-full h-full inline-block z-10",
+          color === "red" ? "border-frame" : "border-frame_purple"
+        )}
+      >
         <span></span>
-        <div className="border-frame w-full h-full overflow-hidden inline-block z-10">
-          <div className="sphere-2"></div>
+        <div
+          className={clsx(
+            "w-full h-full inline-block z-10 overflow-hidden",
+            color === "red" ? "border-frame" : "border-frame_purple"
+          )}
+        >
+          <div
+            className={clsx(color === "red" ? "sphere-2" : "sphere-2_purple")}
+          ></div>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full items-center flex flex-col gap-[40px] pt-[39px]">
             {/* title */}
             <h2 className="iceland-text text-[18px] font-normal ">Creations</h2>
@@ -30,13 +45,22 @@ const CreationsContent = () => {
                       <Button
                         onClick={() => setOpenForHire(true)}
                         title={"details"}
-                        color={"rgba(232, 74, 74, 0.7)"}
+                        color={
+                          color === "red"
+                            ? "rgba(232,74,74,0.8)"
+                            : "rgba(183,21,83,0.8)"
+                        }
                         colortext={"#ffffff"}
                       />
                       <p className="iceland-text text-[14px] font-normal">
                         project name
                       </p>
-                      <h2 className="big-text text-[18px] font-extrabold text-red01">
+                      <h2
+                        className={clsx(
+                          "big-text text-[18px] font-extrabold ",
+                          color === "red" ? "text-red01" : "text-purple01"
+                        )}
+                      >
                         Legacy.ai
                       </h2>
                     </div>
@@ -45,7 +69,12 @@ const CreationsContent = () => {
                       <p className="iceland-text text-[14px] font-normal">
                         brief
                       </p>
-                      <h2 className="big-text text-[18px] font-extrabold text-red01">
+                      <h2
+                        className={clsx(
+                          "big-text text-[18px] font-extrabold ",
+                          color === "red" ? "text-red01" : "text-purple01"
+                        )}
+                      >
                         one sentence explanation for what the project is.
                       </h2>
                     </div>
@@ -57,7 +86,11 @@ const CreationsContent = () => {
                     <Button
                       onClick={() => setOpenForHire(true)}
                       title={"technologies"}
-                      color={"rgba(232, 74, 74, 0.7)"}
+                      color={
+                        color === "red"
+                          ? "rgba(232,74,74,0.8)"
+                          : "rgba(183,21,83,0.8)"
+                      }
                       colortext={"#ffffff"}
                     />
                     <div className="flex gap-[8px]">
@@ -68,7 +101,12 @@ const CreationsContent = () => {
                             alt=""
                             className="w-full h-full object-contain"
                           />
-                          <FaReact className="absolute top-1/2 left-1/2 w-[24px] h-[24px] text-red01 -translate-x-1/2 -translate-y-1/2" />
+                          <FaReact
+                            className={clsx(
+                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                       </div>
                       <div className="relative ">
@@ -78,7 +116,12 @@ const CreationsContent = () => {
                             alt=""
                             className="w-full h-full object-contain"
                           />
-                          <FaNodeJs className="absolute top-1/2 left-1/2 w-[24px] h-[24px] text-red01 -translate-x-1/2 -translate-y-1/2" />
+                          <FaNodeJs
+                            className={clsx(
+                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                       </div>
                       <div className="relative ">
@@ -88,7 +131,12 @@ const CreationsContent = () => {
                             alt=""
                             className="w-full h-full object-contain"
                           />
-                          <FaFigma className="absolute top-1/2 left-1/2 w-[24px] h-[24px] text-red01 -translate-x-1/2 -translate-y-1/2" />
+                          <FaFigma
+                            className={clsx(
+                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                       </div>
                       <div className="relative ">
@@ -98,7 +146,12 @@ const CreationsContent = () => {
                             alt=""
                             className="w-full h-full object-contain"
                           />
-                          <FaJs className="absolute top-1/2 left-1/2 w-[24px] h-[24px] text-red01 -translate-x-1/2 -translate-y-1/2" />
+                          <FaJs
+                            className={clsx(
+                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                       </div>
                       <div className="relative ">
@@ -108,7 +161,12 @@ const CreationsContent = () => {
                             alt=""
                             className="w-full h-full object-contain"
                           />
-                          <FaGit className="absolute top-1/2 left-1/2 w-[24px] h-[24px] text-red01 -translate-x-1/2 -translate-y-1/2" />
+                          <FaGit
+                            className={clsx(
+                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                       </div>
                     </div>
@@ -121,14 +179,25 @@ const CreationsContent = () => {
                     The team has encountered several challenges during the
                     development process, including unexpected system crashes,
                     hardware malfunctions and unanticipated compatibility
-                    issuesThe team <br /><br /> has encountered several challenges
-                    during the development process, including unexpected system
-                    crashes, hardware malfunctions, and unanticipated
-                    compatibility issues...
+                    issuesThe team <br />
+                    <br /> has encountered several challenges during the
+                    development process, including unexpected system crashes,
+                    hardware malfunctions, and unanticipated compatibility
+                    issues...
                   </p>
                   <button className="flex items-center gap-[4px]">
-                    <IoCloseSharp className="text-red01 text-[12px] rotate-45" />
-                    <p className="iceland-text font-normal text-[16px] text-red01">
+                    <IoCloseSharp
+                      className={clsx(
+                        " text-[12px] rotate-45",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    />
+                    <p
+                      className={clsx(
+                        "iceland-text font-normal text-[16px] ",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
                       expand
                     </p>
                   </button>
@@ -136,13 +205,28 @@ const CreationsContent = () => {
               </div>
               {/* right content */}
               <div className="flex flex-col w-2/3 gap-[37px]">
-                <div className="border-frame w-full h-full inline-block z-10">
+                <div
+                  className={clsx(
+                    "w-full h-full inline-block z-10",
+                    color === "red" ? "border-frame" : "border-frame_purple"
+                  )}
+                >
                   <span></span>
-                  <div className="flex items-center justify-between bg-red01/20 p-[11px]">
+                  <div
+                    className={clsx(
+                      "flex items-center justify-between  p-[11px]",
+                      color === "red" ? "bg-red01/20" : "bg-purple01/20"
+                    )}
+                  >
                     <h2 className="iceland-text text-[14px] tracking-normal ">
                       file xplorer
                     </h2>
-                    <IoCloseSharp className="text-red01 text-[16px]" />
+                    <IoCloseSharp
+                      className={clsx(
+                        " text-[16px]",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    />
                   </div>
                   <div className="flex items-center gap-[6px] border-b p-[11px]">
                     <h2 className="iceland-text text-[14px] tracking-normal ">
@@ -156,8 +240,18 @@ const CreationsContent = () => {
                     <div className="py-[14px] px-[12px] flex flex-col gap-[16px]">
                       {/* 1 */}
                       <div className="flex items-center gap-[12px]">
-                        <div className="bg-red01/30 p-[12px]">
-                          <CiImageOn className="w-[24px] h-[24px] text-red01" />
+                        <div
+                          className={clsx(
+                            "p-[12px]",
+                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                          )}
+                        >
+                          <CiImageOn
+                            className={clsx(
+                              "w-[24px] h-[24px]",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                         <div className="flex flex-col gap-[4px]">
                           <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
@@ -170,8 +264,18 @@ const CreationsContent = () => {
                       </div>
                       {/* 2 */}
                       <div className="flex items-center gap-[12px]">
-                        <div className="bg-red01/30 p-[12px]">
-                          <CiImageOn className="w-[24px] h-[24px] text-red01" />
+                        <div
+                          className={clsx(
+                            "p-[12px]",
+                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                          )}
+                        >
+                          <CiImageOn
+                            className={clsx(
+                              "w-[24px] h-[24px]",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                         <div className="flex flex-col gap-[4px]">
                           <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
@@ -184,8 +288,18 @@ const CreationsContent = () => {
                       </div>
                       {/* 3 */}
                       <div className="flex items-center gap-[12px]">
-                        <div className="bg-red01/30 p-[12px]">
-                          <CiImageOn className="w-[24px] h-[24px] text-red01" />
+                        <div
+                          className={clsx(
+                            "p-[12px]",
+                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                          )}
+                        >
+                          <CiImageOn
+                            className={clsx(
+                              "w-[24px] h-[24px]",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                         <div className="flex flex-col gap-[4px]">
                           <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
@@ -198,8 +312,18 @@ const CreationsContent = () => {
                       </div>
                       {/* 4 */}
                       <div className="flex items-center gap-[12px]">
-                        <div className="bg-red01/30 p-[12px]">
-                          <CiImageOn className="w-[24px] h-[24px] text-red01" />
+                        <div
+                          className={clsx(
+                            "p-[12px]",
+                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                          )}
+                        >
+                          <CiImageOn
+                            className={clsx(
+                              "w-[24px] h-[24px]",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                         <div className="flex flex-col gap-[4px]">
                           <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
@@ -212,8 +336,18 @@ const CreationsContent = () => {
                       </div>
                       {/* 5 */}
                       <div className="flex items-center gap-[12px]">
-                        <div className="bg-red01/30 p-[12px]">
-                          <CiImageOn className="w-[24px] h-[24px] text-red01" />
+                        <div
+                          className={clsx(
+                            "p-[12px]",
+                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                          )}
+                        >
+                          <CiImageOn
+                            className={clsx(
+                              "w-[24px] h-[24px]",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                         <div className="flex flex-col gap-[4px]">
                           <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
@@ -226,8 +360,18 @@ const CreationsContent = () => {
                       </div>
                       {/* 6 */}
                       <div className="flex items-center gap-[12px]">
-                        <div className="bg-red01/30 p-[12px]">
-                          <CiImageOn className="w-[24px] h-[24px] text-red01" />
+                        <div
+                          className={clsx(
+                            "p-[12px]",
+                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                          )}
+                        >
+                          <CiImageOn
+                            className={clsx(
+                              "w-[24px] h-[24px]",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                         <div className="flex flex-col gap-[4px]">
                           <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
@@ -242,8 +386,18 @@ const CreationsContent = () => {
                     <div className="py-[14px] px-[120px] flex flex-col gap-[16px]">
                       {/* 7 */}
                       <div className="flex items-center gap-[12px]">
-                        <div className="bg-red01/30 p-[12px]">
-                          <CiImageOn className="w-[24px] h-[24px] text-red01" />
+                        <div
+                          className={clsx(
+                            "p-[12px]",
+                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                          )}
+                        >
+                          <CiImageOn
+                            className={clsx(
+                              "w-[24px] h-[24px]",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                         <div className="flex flex-col gap-[4px]">
                           <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
@@ -256,8 +410,18 @@ const CreationsContent = () => {
                       </div>
                       {/* 8 */}
                       <div className="flex items-center gap-[12px]">
-                        <div className="bg-red01/30 p-[12px]">
-                          <CiImageOn className="w-[24px] h-[24px] text-red01" />
+                        <div
+                          className={clsx(
+                            "p-[12px]",
+                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                          )}
+                        >
+                          <CiImageOn
+                            className={clsx(
+                              "w-[24px] h-[24px]",
+                              color === "red" ? "text-red01" : "text-purple01"
+                            )}
+                          />
                         </div>
                         <div className="flex flex-col gap-[4px]">
                           <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
@@ -272,10 +436,24 @@ const CreationsContent = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-between gap-[16px]">
-                  <button className="bg-red01/70 hover:bg-red01 hover:rounded-[6px] transition-all duration-300 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center text-black">
+                  <button
+                    className={clsx(
+                      " hover:rounded-[6px] transition-all duration-300 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center text-black",
+                      color === "red"
+                        ? "bg-red01/70 hover:bg-red01"
+                        : "bg-purple01/70 hover:bg-purple01 text-white/70"
+                    )}
+                  >
                     view project demo
                   </button>
-                  <button className="border hover:bg-red01/20 hover:rounded-[6px] transition-all duration-300 border-gray03 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center text-red01">
+                  <button
+                    className={clsx(
+                      "border  hover:rounded-[6px] transition-all duration-300 border-gray03 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center ",
+                      color === "red"
+                        ? "hover:bg-red01/20 text-red01"
+                        : "hover:bg-purple01/20 text-purple01"
+                    )}
+                  >
                     Back to all projects
                   </button>
                 </div>

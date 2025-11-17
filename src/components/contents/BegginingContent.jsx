@@ -1,10 +1,18 @@
-import React from "react";
+import clsx from "clsx";
 import heroImg from "../../assets/images/heroPage/heroImg.png";
+import { useTheme } from "../../hook/useTheme";
 
 const BegginingContent = () => {
+  const { color } = useTheme();
+
   return (
     <main className="relative flex items-center justify-center w-full h-screen overflow-hidden px-[290px] py-[92px]">
-      <div className="border-frame inline-block w-full h-full z-10">
+      <div
+        className={clsx(
+          "inline-block w-full h-full z-10",
+          color === "red" ? "border-frame" : "border-frame_purple"
+        )}
+      >
         <img
           src={heroImg}
           className="block w-full h-full object-cover"

@@ -15,8 +15,12 @@ import WhoIsContent from "../components/contents/WhoIsContent";
 import { AnimatePresence } from "framer-motion";
 import FadeIn from "../animations/FadeIn";
 import SettingsModal from "../components/SettingsModal";
+import { useTheme } from "../hook/useTheme";
+import clsx from "clsx";
 
-const HeroPage = ({toggleMusic, isPlay, toggleSound, isSound}) => {
+const HeroPage = ({ toggleMusic, isPlay, toggleSound, isSound }) => {
+  const { color } = useTheme();
+
   const [openContent, setOpenContent] = useState(1);
   const [openForHire, setOpenForHire] = useState(false);
   const [openConnect, setOpenConnect] = useState(false);
@@ -31,23 +35,25 @@ const HeroPage = ({toggleMusic, isPlay, toggleSound, isSound}) => {
           perspective: "1800px",
           perspectiveOrigin:
             openForHire || openConnect || openCredits
-              ? "right center"  
+              ? "right center"
               : openSettings
-              ? "bottom center" 
+              ? "bottom center"
               : "right center",
         }}
       >
         {/* sphere */}
-        <div className="sphere-1"></div>
+        <div
+          className={clsx(color === "red" ? "sphere-1" : "sphere-1_purple")}
+        ></div>
 
         {/* content */}
         <div
           style={{
             transform:
               openForHire || openConnect || openCredits
-                ? "rotateX(0deg) rotateY(-30deg)" 
+                ? "rotateX(0deg) rotateY(-30deg)"
                 : openSettings
-                ? "rotateX(50deg) rotateY(0deg)" 
+                ? "rotateX(50deg) rotateY(0deg)"
                 : "rotateX(0deg) rotateY(0deg)",
             transformStyle: "preserve-3d",
             transition: "transform 0.3s ease-in-out",
@@ -71,7 +77,13 @@ const HeroPage = ({toggleMusic, isPlay, toggleSound, isSound}) => {
             occupation={"developer"}
             corporation={"freelance"}
           />
-          <RightContent toggleMusic={toggleMusic} isPlay={isPlay} setOpenSettings={setOpenSettings} toggleSound={toggleSound} isSound={isSound} />
+          <RightContent
+            toggleMusic={toggleMusic}
+            isPlay={isPlay}
+            setOpenSettings={setOpenSettings}
+            toggleSound={toggleSound}
+            isSound={isSound}
+          />
           <BottomContent
             openContent={openContent}
             setOpenContent={setOpenContent}
@@ -120,7 +132,7 @@ const HeroPage = ({toggleMusic, isPlay, toggleSound, isSound}) => {
             setOpenCredits(false) ||
             setOpenSettings(false)
           }
-          className={`fixed inset-0 bg-black/50 z-20 transition-opacity duration-500 ${
+          className={`fixed inset-0 bg-black/70 z-20 transition-opacity duration-500 ${
             openForHire || openConnect || openCredits || openSettings
               ? "opacity-100"
               : "opacity-0 pointer-events-none"

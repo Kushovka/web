@@ -1,17 +1,32 @@
+import clsx from "clsx";
 import game1 from "../../assets/images/gamesContent/img1.png";
 import game2 from "../../assets/images/gamesContent/img2.png";
 import game3 from "../../assets/images/gamesContent/img3.png";
 import game4 from "../../assets/images/gamesContent/img4.png";
 import game5 from "../../assets/images/gamesContent/img5.png";
 import game6 from "../../assets/images/gamesContent/img6.png";
+import { useTheme } from "../../hook/useTheme";
 
 const GamesContent = () => {
+  const { color } = useTheme();
   return (
     <main className="relative flex items-center justify-center w-full h-screen overflow-hidden px-[290px] py-[92px]">
-      <div className="border-frame w-full h-full inline-block z-10">
+      <div
+        className={clsx(
+          "w-full h-full inline-block z-10",
+          color === "red" ? "border-frame" : "border-frame_purple"
+        )}
+      >
         <span></span>
-        <div className="border-frame w-full h-full overflow-hidden inline-block z-10">
-          <div className="sphere-2"></div>
+        <div
+          className={clsx(
+            "w-full h-full inline-block z-10 overflow-hidden",
+            color === "red" ? "border-frame" : "border-frame_purple"
+          )}
+        >
+          <div
+            className={clsx(color === "red" ? "sphere-2" : "sphere-2_purple")}
+          ></div>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center w-full items-center flex flex-col gap-[40px] pt-[39px]">
             {/* title */}
             <h2 className="iceland-text text-[18px] font-normal ">
@@ -33,7 +48,12 @@ const GamesContent = () => {
                 <div className="flex flex-col gap-[6px]">
                   <img src={game1} alt="" />
                   <div className="flex flex-col gap-[2px]">
-                    <h2 className="big-text text-[18px] font-extrabold text-red01">
+                    <h2
+                      className={clsx(
+                        "big-text text-[18px] font-extrabold ",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
                       gain life
                     </h2>
                     <p className="iceland-text text-[14px] tracking-normal text-gray02">
@@ -45,7 +65,12 @@ const GamesContent = () => {
                 <div className="flex flex-col gap-[6px]">
                   <img src={game2} alt="" />
                   <div className="flex flex-col gap-[2px]">
-                    <h2 className="big-text text-[18px] font-extrabold text-red01">
+                    <h2
+                      className={clsx(
+                        "big-text text-[18px] font-extrabold ",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
                       escape the storm
                     </h2>
                     <p className="iceland-text text-[14px] tracking-normal text-gray02">
@@ -57,7 +82,12 @@ const GamesContent = () => {
                 <div className="flex flex-col gap-[6px]">
                   <img src={game3} alt="" />
                   <div className="flex flex-col gap-[2px]">
-                    <h2 className="big-text text-[18px] font-extrabold text-red01">
+                    <h2
+                      className={clsx(
+                        "big-text text-[18px] font-extrabold ",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
                       dr mario
                     </h2>
                     <p className="iceland-text text-[14px] tracking-normal text-gray02">
@@ -69,7 +99,12 @@ const GamesContent = () => {
                 <div className="flex flex-col gap-[6px]">
                   <img src={game4} alt="" />
                   <div className="flex flex-col gap-[2px]">
-                    <h2 className="big-text text-[18px] font-extrabold text-red01">
+                    <h2
+                      className={clsx(
+                        "big-text text-[18px] font-extrabold ",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
                       snake 2!
                     </h2>
                     <p className="iceland-text text-[14px] tracking-normal text-gray02">
@@ -81,7 +116,12 @@ const GamesContent = () => {
                 <div className="flex flex-col gap-[6px]">
                   <img src={game5} alt="" />
                   <div className="flex flex-col gap-[2px]">
-                    <h2 className="big-text text-[18px] font-extrabold text-red01">
+                    <h2
+                      className={clsx(
+                        "big-text text-[18px] font-extrabold ",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
                       arcanoid
                     </h2>
                     <p className="iceland-text text-[14px] tracking-normal text-gray02">
@@ -93,7 +133,12 @@ const GamesContent = () => {
                 <div className="flex flex-col gap-[6px]">
                   <img src={game6} alt="" />
                   <div className="flex flex-col gap-[2px]">
-                    <h2 className="big-text text-[18px] font-extrabold text-red01">
+                    <h2
+                      className={clsx(
+                        "big-text text-[18px] font-extrabold ",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
                       snake
                     </h2>
                     <p className="iceland-text text-[14px] tracking-normal text-gray02">

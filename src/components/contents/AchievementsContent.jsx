@@ -2,14 +2,29 @@ import CardAchievements from "../CardAchievements";
 import icon1 from "../../assets/images/achievementsContent/icon1.png";
 import icon2 from "../../assets/images/achievementsContent/icon2.png";
 import icon4 from "../../assets/images/achievementsContent/icon4.png";
+import { useTheme } from "../../hook/useTheme";
+import clsx from "clsx";
 
 const AchievementsContent = () => {
+  const { color } = useTheme();
   return (
     <main className="relative flex items-center justify-center w-full h-screen overflow-hidden px-[290px] py-[92px]">
-      <div className="border-frame w-full h-full inline-block z-10">
+      <div
+        className={clsx(
+          "w-full h-full inline-block z-10",
+          color === "red" ? "border-frame" : "border-frame_purple"
+        )}
+      >
         <span></span>
-        <div className="border-frame w-full h-full overflow-hidden inline-block z-10">
-          <div className="sphere-2"></div>
+        <div
+          className={clsx(
+            "w-full h-full inline-block z-10 overflow-hidden",
+            color === "red" ? "border-frame" : "border-frame_purple"
+          )}
+        >
+          <div
+            className={clsx(color === "red" ? "sphere-2" : "sphere-2_purple")}
+          ></div>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center w-full items-center flex flex-col gap-[40px] pt-[39px]">
             {/* title */}
             <h2 className="iceland-text text-[18px] font-normal ">
@@ -40,7 +55,7 @@ const AchievementsContent = () => {
                           cx="50"
                           cy="50"
                           r="45"
-                          stroke="#E84A4A"
+                          stroke={color === "red" ? "#E84A4A" : "#B71553"}
                           strokeWidth="12"
                           fill="none"
                           strokeDasharray="283"
@@ -49,7 +64,12 @@ const AchievementsContent = () => {
                         />
                       </svg>
                     </div>
-                    <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 big-text text-[22px] text-red01 font-bold">
+                    <p
+                      className={clsx(
+                        "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 big-text text-[22px]  font-bold",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
                       8/27
                     </p>
                   </div>
@@ -71,7 +91,14 @@ const AchievementsContent = () => {
                   </p>
                 </div>
                 <div>
-                  <button className="big-text text-[18px] font-extrabold text-red01 border border-red01 px-[36px] py-[6px] w-full">
+                  <button
+                    className={clsx(
+                      "big-text text-[18px] font-extrabold  border  px-[36px] py-[6px] w-full",
+                      color === "red"
+                        ? "text-red01 border-red01"
+                        : "text-purple01 border-purple01"
+                    )}
+                  >
                     Challenge me
                   </button>
                 </div>
@@ -136,20 +163,52 @@ const AchievementsContent = () => {
               {/* buttons */}
               <div className="flex flex-col gap-[8px]">
                 <div className="flex gap-[9px]">
-                  <div className="border border-red01 w-[18px] h-[18px] "></div>
-                  <p className="iceberg-text text-[14px] text-red01">
+                  <div
+                    className={clsx(
+                      "border  w-[18px] h-[18px]",
+                      color === "red" ? "border-red01" : "border-purple01"
+                    )}
+                  ></div>
+                  <p
+                    className={clsx(
+                      "iceberg-text text-[14px] ",
+                      color === "red" ? "text-red01" : "text-purple01"
+                    )}
+                  >
                     active btn
                   </p>
                 </div>
                 <div className="flex gap-[9px]">
-                  <div className="border border-red01 w-[18px] h-[18px] "></div>
-                  <p className="iceberg-text text-[14px] text-red01">
+                  <div
+                    className={clsx(
+                      "border  w-[18px] h-[18px]",
+                      color === "red" ? "border-red01" : "border-purple01"
+                    )}
+                  ></div>
+                  <p
+                    className={clsx(
+                      "iceberg-text text-[14px] ",
+                      color === "red" ? "text-red01" : "text-purple01"
+                    )}
+                  >
                     in progress
                   </p>
                 </div>
                 <div className="flex gap-[9px]">
-                  <div className="border border-red01 w-[18px] h-[18px] "></div>
-                  <p className="iceberg-text text-[14px] text-red01">todo</p>
+                  <div
+                    className={clsx(
+                      "border  w-[18px] h-[18px]",
+                      color === "red" ? "border-red01" : "border-purple01"
+                    )}
+                  ></div>
+                  <p
+                    className={clsx(
+                      "iceberg-text text-[14px] ",
+                      color === "red" ? "text-red01" : "text-purple01"
+                    )}
+                  >
+                    todo
+                  </p>
                 </div>
               </div>
             </div>

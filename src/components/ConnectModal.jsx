@@ -1,4 +1,8 @@
+import clsx from "clsx";
+import { useTheme } from "../hook/useTheme";
+
 const ConnectModal = ({ setOpenConnect }) => {
+  const { color } = useTheme();
   return (
     <section className="fixed z-30 top-1/2 -translate-y-1/2 px-[100px]  left-0 flex flex-col gap-[30px]">
       <div className="flex flex-col gap-[5px]">
@@ -17,7 +21,10 @@ const ConnectModal = ({ setOpenConnect }) => {
         <div className="flex flex-col gap-[12px]">
           <label
             for="name"
-            className="big-text text-[18px] font-extrabold text-red01"
+            className={clsx(
+              "big-text text-[18px] font-extrabold ",
+              color === "red" ? "text-red01" : "text-purple01"
+            )}
           >
             How should I call you?
           </label>
@@ -33,7 +40,10 @@ const ConnectModal = ({ setOpenConnect }) => {
         <div className="flex flex-col gap-[12px]">
           <label
             for="email"
-            className="big-text text-[18px] font-extrabold text-red01"
+            className={clsx(
+              "big-text text-[18px] font-extrabold ",
+              color === "red" ? "text-red01" : "text-purple01"
+            )}
           >
             Sending from
           </label>
@@ -49,7 +59,10 @@ const ConnectModal = ({ setOpenConnect }) => {
         <div className="flex flex-col gap-[12px]">
           <label
             for="message"
-            className="big-text text-[18px] font-extrabold text-red01"
+            className={clsx(
+              "big-text text-[18px] font-extrabold ",
+              color === "red" ? "text-red01" : "text-purple01"
+            )}
           >
             transmitted data
           </label>
@@ -65,13 +78,23 @@ const ConnectModal = ({ setOpenConnect }) => {
         <div className="flex items-center gap-[16px]">
           <button
             type="submit"
-            className="bg-red01/70 hover:bg-red01 hover:rounded-[6px] transition-all duration-300 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center text-black"
+            className={clsx(
+              " hover:rounded-[6px] transition-all duration-300 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center text-black",
+              color === "red"
+                ? "bg-red01/70 hover:bg-red01"
+                : "bg-purple01/70 hover:bg-purple01 text-white/70"
+            )}
           >
             send message [enter]
           </button>
           <button
             onClick={() => setOpenConnect(false)}
-            className="border hover:bg-red01/20 hover:rounded-[6px] transition-all duration-300 border-gray03 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center text-red01"
+            className={clsx(
+              "border  hover:rounded-[6px] transition-all duration-300 border-gray03 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center ",
+              color === "red"
+                ? "hover:bg-red01/20 text-red01"
+                : "hover:bg-purple01/20 text-purple01"
+            )}
           >
             discard [esc]
           </button>

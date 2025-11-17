@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import sound from "../audio/click2.mp3";
+import { useTheme } from "../hook/useTheme";
+import clsx from "clsx";
 
 const Header = ({ setOpenCredits, isSound }) => {
+  const { color } = useTheme();
+
   const [time, setTime] = useState(new Date());
   const audioRef = useRef(null);
 
@@ -37,7 +41,12 @@ const Header = ({ setOpenCredits, isSound }) => {
         </div>
         <div className="flex items-end justify-center gap-[16px]">
           <button className="border border-black03  flex items-center justify-center w-[33px] h-[33px] ">
-            <IoCloseSharp className="text-red01 text-[16px] rotate-45" />
+            <IoCloseSharp
+              className={clsx(
+                "text-[16px] rotate-45",
+                color === "red" ? "text-red01" : "text-purple01"
+              )}
+            />
           </button>
           <div className="flex items-end justify-center gap-[6px]">
             <h2 className="big-text font-extrabold text-[26px] text-green01">
