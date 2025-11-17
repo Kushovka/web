@@ -4,17 +4,22 @@
 <br><br>
 <div> 
   <b>EN:<br/>
-<p>
+<p align="center">
 Modern interactive portfolio website with animations, sound effects, and a custom interface. The project is built from scratch using React, with Vite compilation and Tailwind CSS styling.
 </p>
 </div>
 <br>
 <div>
 <b>RU:<br/>
-<p>
+<p align="center">
 Современный интерактивный сайт с анимациями, звуковыми эффектами и кастомным интерфейсом. Проект выполнен с нуля на React, со сборкой Vite и стилизацией через Tailwind CSS.
 </p>
 </div>
+  <br>
+    <div align="center">
+    
+  > ⚠️ Проект всё ещё находится в активной разработке. На сегодняшний день это один из моих самых больших, масштабных и интересных проектов, в который я постоянно добавляю новые фичи, анимации и улучшения.
+  </div>
 <br>
 <h1>⚙️ Tech Stack</h1>
 <br>
@@ -56,14 +61,7 @@ npm run dev
 ```
 
 
-# 🚧 Статус проекта
-<br><br>
-<div>
-  
-  <p>
-    Проект всё ещё находится в активной разработке. На сегодняшний день это один из моих самых больших, масштабных и интересных проектов, в который я постоянно добавляю новые фичи, анимации и улучшения.
-  </p>
-</div>
+
 <br>
 <h1>☎️ Connect with me </h1>
  <br>
