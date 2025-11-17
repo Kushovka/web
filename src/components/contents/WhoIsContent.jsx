@@ -1,14 +1,29 @@
+import clsx from "clsx";
 import img1 from "../../assets/images/whoContent/img1.png";
+import { useTheme } from "../../hook/useTheme";
 
 const WhoIsContent = () => {
+  const { color } = useTheme();
   return (
     <main
       className={`relative flex items-center justify-center w-full h-screen overflow-hidden px-[290px] py-[92px]`}
     >
-      <div className="border-frame w-full h-full inline-block z-10">
+      <div
+        className={clsx(
+          "w-full h-full inline-block z-10",
+          color === "red" ? "border-frame" : "border-frame_purple"
+        )}
+      >
         <span></span>
-        <div className="border-frame w-full h-full inline-block z-10 overflow-hidden">
-          <div className="sphere-2"></div>
+        <div
+          className={clsx(
+            "w-full h-full inline-block z-10 overflow-hidden",
+            color === "red" ? "border-frame" : "border-frame_purple"
+          )}
+        >
+          <div
+            className={clsx(color === "red" ? "sphere-2" : "sphere-2_purple")}
+          ></div>
           <div className="text-center flex flex-col gap-[32px] pt-[39px] px-[195px]">
             <h2 className="iceland-text text-[18px] font-normal ">
               Who is Kirill Kushov
