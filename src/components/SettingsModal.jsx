@@ -123,22 +123,11 @@ const SettingsModal = ({ setOpenSettings }) => {
             <br /> not apply.
           </p>
         </div>
-        <div className="flex items-center gap-[16px]">
-          <button
-            type="submit"
-            className={clsx(
-              " hover:rounded-[6px] transition-all duration-300 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center text-white/70",
-              color === "red"
-                ? "bg-red01/70 hover:bg-red01"
-                : "bg-[#b71553]/70 hover:bg-purple01"
-            )}
-          >
-            send message [enter]
-          </button>
+        <div className="flex w-full items-center gap-[16px]">
           <button
             onClick={() => setOpenSettings(false)}
             className={clsx(
-              "border  hover:rounded-[6px] transition-all duration-300 border-gray03 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center ",
+              "border w-full hover:rounded-[6px] transition-all duration-300 border-gray03 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center ",
               color === "red"
                 ? "text-red01 hover:bg-red01/20"
                 : "text-white/70 hover:bg-purple01/20"
