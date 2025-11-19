@@ -18,7 +18,7 @@ const BottomContent = ({ setOpenContent, openContent, isSound }) => {
     setOpenContent(num);
   }
   return (
-    <section className="fixed flex items-center justify-center w-screen px-[78px] z-20 pt-[27px] pb-[35px] bottom-0 left-1/2 -translate-x-1/2 ">
+    <section className="md:fixed hidden md:flex items-center justify-center w-screen px-[78px] z-20 pt-[27px] pb-[35px] bottom-0 left-1/2 -translate-x-1/2 ">
       <div
         className={clsx(
           "w-full flex items-center justify-center gap-[15px] leading-[100%]",

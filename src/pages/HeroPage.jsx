@@ -93,7 +93,15 @@ const HeroPage = ({ toggleMusic, isPlay, toggleSound, isSound }) => {
           <AnimatePresence mode="wait">
             {openContent === 1 && (
               <FadeIn key="1">
-                <BegginingContent />
+                <BegginingContent
+                  openContent={openContent}
+                  setOpenContent={setOpenContent}
+                  toggleSound={toggleSound}
+                  isSound={isSound}
+                  toggleMusic={toggleMusic}
+                  isPlay={isPlay}
+                  setOpenSettings={setOpenSettings}
+                />
               </FadeIn>
             )}
             {openContent === 2 && (

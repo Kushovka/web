@@ -51,7 +51,7 @@ const RightContent = ({
     toggleMusic();
   }
   return (
-    <section className="fixed right-0 top-0 py-[92px] max-w-[290px] pl-[16px] flex flex-col justify-between z-30 h-screen pr-[79px]">
+    <section className="md:fixed hidden right-0 top-0 py-[92px] max-w-[290px] pl-[16px] md:flex flex-col justify-between z-30 md:h-screen md:pr-[79px]">
       <div>
         <div
           className={clsx(

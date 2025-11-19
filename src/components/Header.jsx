@@ -29,7 +29,7 @@ const Header = ({ setOpenCredits, isSound }) => {
   const formattedDate = time.toLocaleTimeString([navigator.language]);
 
   return (
-    <section className="fixed flex z-10 items-center justify-between w-screen px-[78px] pt-[27px] pb-[32px] top-0 ">
+    <section className="md:fixed hidden md:flex z-10 items-center justify-between w-screen px-[78px] pt-[27px] pb-[32px] top-0 ">
       <div className="flex gap-[46px]">
         <div className="flex items-end justify-center gap-[2px]">
           <h2 className="big-text font-extrabold text-[26px] text-green01">

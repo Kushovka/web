@@ -5,12 +5,12 @@ import clsx from "clsx";
 const SettingsModal = ({ setOpenSettings }) => {
   const { color, toggleColor } = useTheme();
   return (
-    <section className="fixed z-30 top-1/2 -translate-y-1/2 px-[100px]  left-1/2 -translate-x-1/2 flex flex-col gap-[30px]">
+    <section className="fixed z-30 top-1/2 -translate-y-1/2 md:px-[100px] w-full md:w-max px-[25px] left-1/2 -translate-x-1/2 flex flex-col gap-[30px]">
       <div className="flex flex-col gap-[5px]">
-        <h1 className="big-text font-extrabold text-[18px] ">
+        <h1 className="big-text font-extrabold text-[18px] text-center md:text-left">
           visual configurator
         </h1>
-        <p className="iceland-text text-[16px] text-gray02">
+        <p className="iceland-text text-[16px] text-gray02 text-center md:text-left">
           apply what works best for you
         </p>
       </div>
@@ -20,7 +20,7 @@ const SettingsModal = ({ setOpenSettings }) => {
           color === "red" ? "bg-red01/10" : "bg-purple01/10"
         )}
       >
-        <div className="flex flex-col gap-[12px]">
+        <div className="md:flex hidden flex-col gap-[12px]">
           <label
             for="name"
             className={clsx(
@@ -43,7 +43,7 @@ const SettingsModal = ({ setOpenSettings }) => {
             className="bg-black05 px-[20px] py-[14px] "
           />
         </div>
-        <div className="flex flex-col gap-[12px]">
+        <div className="md:flex hidden flex-col gap-[12px]">
           <label
             for="email"
             className={clsx(
@@ -62,7 +62,7 @@ const SettingsModal = ({ setOpenSettings }) => {
             className="bg-black05 px-[20px] py-[14px] "
           />
         </div>
-        <div className="flex flex-col gap-[12px] pb-[76px]">
+        <div className="md:flex hidden flex-col gap-[12px] pb-[76px]">
           <label
             for="name"
             className={clsx(
