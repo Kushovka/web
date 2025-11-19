@@ -3,7 +3,14 @@ import Button from "../components/Button";
 import { IoIosBluetooth } from "react-icons/io";
 import { useTheme } from "../hook/useTheme";
 
-const WhoIsSection = ({ name, occupation, corporation, className }) => {
+const WhoIsSection = ({
+  name,
+  occupation,
+  corporation,
+  className,
+  setOpenForHire,
+  setOpenConnect
+}) => {
   const { color } = useTheme();
   return (
     <section className={clsx(className)}>
@@ -47,6 +54,7 @@ const WhoIsSection = ({ name, occupation, corporation, className }) => {
           <div className="flex flex-col gap-[4px] ">
             <h1 className=" text-[14px] iceland-text">availability</h1>
             <Button
+              onClick={() => setOpenForHire(true)}
               title={"open for hire"}
               color={
                 color === "red" ? "rgba(232,74,74,0.8)" : "rgba(183,21,83,0.8)"
@@ -57,6 +65,7 @@ const WhoIsSection = ({ name, occupation, corporation, className }) => {
           <div className="flex flex-col gap-[4px] ">
             <h1 className="text-[14px] iceland-text">social</h1>
             <button
+            onClick={() => setOpenConnect(true)}
               className={clsx(
                 "relative font-extrabold text-[18px] big-text  border  p-[7px] text-left group transition-all duration-300",
                 color === "red"

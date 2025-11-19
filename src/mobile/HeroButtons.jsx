@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useTheme } from "../hook/useTheme";
 
-const HeroButtons = ({ className, setOpenModal }) => {
+const HeroButtons = ({ className, setOpenModal, setOpenCredits }) => {
   const { color } = useTheme();
   return (
     <div className={clsx("flex items-center gap-[16px]", className)}>
@@ -18,6 +18,7 @@ const HeroButtons = ({ className, setOpenModal }) => {
         navigation
       </button>
       <button
+        onClick={() => setOpenCredits(true)}
         className={clsx(
           "border  hover:rounded-[6px] transition-all duration-300 border-gray03 px-[30px] py-[6px] big-text text-[18px] w-full font-extrabold text-center ",
           color === "red"

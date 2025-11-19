@@ -10,11 +10,31 @@ import { CiImageOn } from "react-icons/ci";
 import polygon from "../../assets/images/creationsContent/polygon.png";
 import { useTheme } from "../../hook/useTheme";
 import clsx from "clsx";
+import HeroButtons from "../../mobile/HeroButtons";
+import Navigate from "../Navigate";
 
-const CreationsContent = () => {
-  const { color } = useTheme();
+const CreationsContent = ({
+  openContent,
+
+  isSound,
+
+  isPlay,
+
+  setOpenForHire,
+  setOpenConnect,
+  setOpenCredits,
+  setOpenModal,
+  openModal,
+  color,
+  audioClick,
+  soundClick,
+  soundSwitch,
+  musicSwitch,
+  switchRef,
+  audioRef,
+}) => {
   return (
-    <main className="relative flex items-center justify-center w-full h-screen overflow-hidden px-[290px] py-[92px]">
+    <main className="relative flex flex-col md:flex-row items-center justify-center w-full h-screen overflow-hidden md:px-[290px] md:py-[92px] px-[10px] py-[10px] gap-[20px] md:gap-0">
       <div
         className={clsx(
           "w-full h-full inline-block z-10",
@@ -35,9 +55,9 @@ const CreationsContent = () => {
             {/* title */}
             <h2 className="iceland-text text-[18px] font-normal ">Creations</h2>
             {/* content */}
-            <div className="w-full flex gap-[16px] px-[93px]">
+            <div className="w-full flex flex-col md:flex-row gap-[16px] md:px-[93px] px-[10px]">
               {/* left content */}
-              <div className="flex flex-col w-1/3 gap-[20px]">
+              <div className="flex md:flex-col md:w-1/3 w-full gap-[20px]">
                 {/* details */}
                 <div className="w-full  border border-white/10">
                   <div className="flex flex-col p-[12px] gap-[17px]">
@@ -93,7 +113,7 @@ const CreationsContent = () => {
                       }
                       colortext={"#ffffff"}
                     />
-                    <div className="flex gap-[8px]">
+                    <div className="md:flex grid grid-cols-2 gap-[8px]">
                       <div className="relative ">
                         <div className="relative w-full h-full">
                           <img
@@ -173,7 +193,7 @@ const CreationsContent = () => {
                   </div>
                 </div>
                 {/* about */}
-                <div className="flex flex-col gap-[10px]">
+                <div className="md:flex hidden flex-col gap-[10px]">
                   <h2 className="iceland-text text-[14px] ">About:</h2>
                   <p className="iceland-text text-[14px] text-gray02">
                     The team has encountered several challenges during the
@@ -204,7 +224,7 @@ const CreationsContent = () => {
                 </div>
               </div>
               {/* right content */}
-              <div className="flex flex-col w-2/3 gap-[37px]">
+              <div className="flex flex-col md:w-2/3 w-full gap-[37px]">
                 <div
                   className={clsx(
                     "w-full h-full inline-block z-10",
@@ -359,7 +379,7 @@ const CreationsContent = () => {
                         </div>
                       </div>
                       {/* 6 */}
-                      <div className="flex items-center gap-[12px]">
+                      <div className="md:flex hidden items-center gap-[12px]">
                         <div
                           className={clsx(
                             "p-[12px]",
@@ -385,7 +405,7 @@ const CreationsContent = () => {
                     </div>
                     <div className="py-[14px] px-[120px] flex flex-col gap-[16px]">
                       {/* 7 */}
-                      <div className="flex items-center gap-[12px]">
+                      <div className="md:flex hidden items-center gap-[12px]">
                         <div
                           className={clsx(
                             "p-[12px]",
@@ -409,7 +429,7 @@ const CreationsContent = () => {
                         </div>
                       </div>
                       {/* 8 */}
-                      <div className="flex items-center gap-[12px]">
+                      <div className="md:flex hidden  items-center gap-[12px]">
                         <div
                           className={clsx(
                             "p-[12px]",
@@ -435,7 +455,7 @@ const CreationsContent = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center justify-between gap-[16px]">
+                <div className="md:flex hidden items-center justify-between gap-[16px]">
                   <button
                     className={clsx(
                       " hover:rounded-[6px] transition-all duration-300 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center text-black",
@@ -462,6 +482,28 @@ const CreationsContent = () => {
           </div>
         </div>
       </div>
+      <div>
+        <HeroButtons
+          setOpenCredits={setOpenCredits}
+          setOpenModal={setOpenModal}
+          className={"md:hidden"}
+        />
+      </div>
+      {openModal && (
+        <Navigate
+          audioClick={audioClick}
+          soundClick={soundClick}
+          musicSwitch={musicSwitch}
+          isPlay={isPlay}
+          switchRef={switchRef}
+          soundSwitch={soundSwitch}
+          isSound={isSound}
+          audioRef={audioRef}
+          openContent={openContent}
+          color={color}
+          setOpenModal={setOpenModal}
+        />
+      )}
     </main>
   );
 };

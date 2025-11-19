@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import BegginingContent from "../components/contents/BegginingContent";
 import LogsContent from "../components/contents/LogsContent";
 import BottomContent from "../components/BottomContent";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import AchievementsContent from "../components/contents/AchievementsContent";
 import CreationsContent from "../components/contents/CreationsContent";
 import GamesContent from "../components/contents/GamesContent";
@@ -26,6 +26,46 @@ const HeroPage = ({ toggleMusic, isPlay, toggleSound, isSound }) => {
   const [openConnect, setOpenConnect] = useState(false);
   const [openCredits, setOpenCredits] = useState(false);
   const [openSettings, setOpenSettings] = useState(false);
+
+  const [openModal, setOpenModal] = useState(false);
+
+  const audioRef = useRef(null);
+
+  function audioClick(num) {
+    if (isSound && audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.volume = 0.2;
+      audioRef.current.play();
+    }
+    setOpenContent(num);
+    setOpenModal(false);
+  }
+  const switchRef = useRef(null);
+
+  function soundClick() {
+    if (isSound && audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.volume = 0.2;
+      audioRef.current.play();
+    }
+    setOpenSettings(true);
+  }
+  function soundSwitch() {
+    if (switchRef.current) {
+      switchRef.current.currentTime = 0;
+      switchRef.current.volume = 0.2;
+      switchRef.current.play();
+    }
+    toggleSound();
+  }
+  function musicSwitch() {
+    if (switchRef.current) {
+      switchRef.current.currentTime = 0;
+      switchRef.current.volume = 0.2;
+      switchRef.current.play();
+    }
+    toggleMusic();
+  }
 
   return (
     <section className="relative h-screen w-full">
@@ -101,27 +141,119 @@ const HeroPage = ({ toggleMusic, isPlay, toggleSound, isSound }) => {
                   toggleMusic={toggleMusic}
                   isPlay={isPlay}
                   setOpenSettings={setOpenSettings}
+                  setOpenForHire={setOpenForHire}
+                  setOpenConnect={setOpenConnect}
+                  setOpenCredits={setOpenCredits}
+                  setOpenModal={setOpenModal}
+                  openModal={openModal}
+                  color={color}
+                  audioClick={audioClick}
+                  soundClick={soundClick}
+                  soundSwitch={soundSwitch}
+                  musicSwitch={musicSwitch}
+                  switchRef={switchRef}
+                  audioRef={audioRef}
                 />
               </FadeIn>
             )}
             {openContent === 2 && (
               <FadeIn key="2">
-                <LogsContent />
+                <LogsContent
+                  setOpenModal={setOpenModal}
+                  setOpenCredits={setOpenCredits}
+                  openModal={openModal}
+                  openContent={openContent}
+                  setOpenContent={setOpenContent}
+                  toggleSound={toggleSound}
+                  isSound={isSound}
+                  toggleMusic={toggleMusic}
+                  isPlay={isPlay}
+                  setOpenSettings={setOpenSettings}
+                  setOpenForHire={setOpenForHire}
+                  setOpenConnect={setOpenConnect}
+                  color={color}
+                  audioClick={audioClick}
+                  soundClick={soundClick}
+                  soundSwitch={soundSwitch}
+                  musicSwitch={musicSwitch}
+                  switchRef={switchRef}
+                  audioRef={audioRef}
+                />
               </FadeIn>
             )}
             {openContent === 3 && (
               <FadeIn key="3">
-                <AchievementsContent />
+                <AchievementsContent
+                  setOpenModal={setOpenModal}
+                  setOpenCredits={setOpenCredits}
+                  openModal={openModal}
+                  openContent={openContent}
+                  setOpenContent={setOpenContent}
+                  toggleSound={toggleSound}
+                  isSound={isSound}
+                  toggleMusic={toggleMusic}
+                  isPlay={isPlay}
+                  setOpenSettings={setOpenSettings}
+                  setOpenForHire={setOpenForHire}
+                  setOpenConnect={setOpenConnect}
+                  color={color}
+                  audioClick={audioClick}
+                  soundClick={soundClick}
+                  soundSwitch={soundSwitch}
+                  musicSwitch={musicSwitch}
+                  switchRef={switchRef}
+                  audioRef={audioRef}
+                />
               </FadeIn>
             )}
             {openContent === 4 && (
               <FadeIn key="4">
-                <CreationsContent />
+                <CreationsContent
+                  openContent={openContent}
+                  setOpenContent={setOpenContent}
+                  toggleSound={toggleSound}
+                  isSound={isSound}
+                  toggleMusic={toggleMusic}
+                  isPlay={isPlay}
+                  setOpenSettings={setOpenSettings}
+                  setOpenForHire={setOpenForHire}
+                  setOpenConnect={setOpenConnect}
+                  setOpenCredits={setOpenCredits}
+                  setOpenModal={setOpenModal}
+                  openModal={openModal}
+                  color={color}
+                  audioClick={audioClick}
+                  soundClick={soundClick}
+                  soundSwitch={soundSwitch}
+                  musicSwitch={musicSwitch}
+                  switchRef={switchRef}
+                  audioRef={audioRef}
+                />
               </FadeIn>
             )}
             {openContent === 5 && (
               <FadeIn key="5">
-                <GamesContent />
+                <GamesContent
+                  openContent={openContent}
+                  setOpenContent={setOpenContent}
+                  toggleSound={toggleSound}
+                  isSound={isSound}
+                  toggleMusic={toggleMusic}
+                  isPlay={isPlay}
+                  setOpenSettings={setOpenSettings}
+                  setOpenForHire={setOpenForHire}
+                  setOpenConnect={setOpenConnect}
+                  setOpenCredits={setOpenCredits}
+                  setOpenModal={setOpenModal}
+                  openModal={openModal}
+                  color={color}
+                  audioClick={audioClick}
+                  soundClick={soundClick}
+                  soundSwitch={soundSwitch}
+                  musicSwitch={musicSwitch}
+                  switchRef={switchRef}
+                  audioRef={audioRef}
+                />
               </FadeIn>
             )}
             {openContent === 6 && (

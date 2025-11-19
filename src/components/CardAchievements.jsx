@@ -9,10 +9,11 @@ const CardAchievements = ({
   variant3,
   textVariant,
   opacity,
+  className
 }) => {
   return (
     <div
-      className={`border ${variant2} rounded-tl-[12px] ${
+      className={`border ${variant2} ${className} rounded-tl-[12px] ${
         opacity ? "opacity-30" : ""
       }`}
     >

@@ -4,7 +4,7 @@ import { useTheme } from "../hook/useTheme";
 const ConnectModal = ({ setOpenConnect }) => {
   const { color } = useTheme();
   return (
-    <section className="fixed z-30 top-1/2 -translate-y-1/2 px-[100px]  left-0 flex flex-col gap-[30px]">
+    <section className="fixed z-30 top-1/2 -translate-y-1/2 md:px-[100px] px-[20px] left-0 flex flex-col gap-[30px]">
       <div className="flex flex-col gap-[5px]">
         <h1 className="big-text font-extrabold text-[18px] ">
           connect with me

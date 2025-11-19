@@ -3,28 +3,46 @@ import { IoCloseSharp } from "react-icons/io5";
 import { CiImageOn } from "react-icons/ci";
 import { useTheme } from "../../hook/useTheme";
 import clsx from "clsx";
+import HeroButtons from "../../mobile/HeroButtons";
+import Navigate from "../Navigate";
 
-const BegginingContent = () => {
-  const { color } = useTheme();
+const LogsContent = ({
+  openContent,
+  isSound,
+  isPlay,
+  setOpenForHire,
+  setOpenConnect,
+  setOpenCredits,
+  setOpenModal,
+  openModal,
+  color,
+  audioClick,
+  soundClick,
+  soundSwitch,
+  musicSwitch,
+  switchRef,
+  audioRef,
+}) => {
+  
   return (
-    <main className="relative flex items-center justify-center w-full h-screen overflow-hidden px-[290px] py-[92px]">
+    <main className="relative flex flex-col md:flex-row gap-[20px] md:gap-0 items-center justify-center w-full h-screen overflow-hidden md:px-[290px] px-[10px] md:py-[92px] py-[10px]">
       <div
         className={clsx(
-          "w-full h-full inline-block z-10",
+          "w-full md:h-full inline-block z-10",
           color === "red" ? "border-frame" : "border-frame_purple"
         )}
       >
         <span></span>
         <div
           className={clsx(
-            "w-full h-full inline-block z-10 overflow-hidden",
+            "w-full md:h-full inline-block z-10 md:overflow-hidden",
             color === "red" ? "border-frame" : "border-frame_purple"
           )}
         >
           <div
             className={clsx(color === "red" ? "sphere-2" : "sphere-2_purple")}
           ></div>
-          <div className="text-center flex flex-col gap-[32px] pt-[39px] px-[195px]">
+          <div className="text-center flex flex-col gap-[32px] md:pt-[39px] md:pb-0 pt-[20px] pb-[20px] md:px-[195px] px-[25px]">
             <h2 className="iceland-text text-[18px] font-normal ">
               data log dump initialized.
             </h2>
@@ -37,7 +55,7 @@ const BegginingContent = () => {
                     color === "red" ? "bg-red01" : "bg-purple01"
                   )}
                 >
-                  <h2 className="big-text font-extrabold text-[18px] text-black04">
+                  <h2 className="big-text font-extrabold md:text-[18px] text-left md:text-center text-black04">
                     LOG ENTRY: PROJECT DEVELOPMENT UPDATE
                   </h2>
                   <p className="iceberg-text font-normal text-[14px] text-black04">
@@ -63,7 +81,7 @@ const BegginingContent = () => {
               </div>
               {/* cards */}
               <div className="flex flex-col gap-[23px]">
-                <div className="grid grid-cols-2 text-left gap-[15px]">
+                <div className="grid md:grid-cols-2 text-left gap-[15px]">
                   {logsCards.map((item, idx) => (
                     <div
                       key={idx}
@@ -71,13 +89,13 @@ const BegginingContent = () => {
                     >
                       <h2
                         className={clsx(
-                          "big-text uppercase text-[18px] font-extrabold ",
+                          "big-text uppercase md:text-[18px] font-extrabold ",
                           color === "red" ? "text-red01" : "text-purple01"
                         )}
                       >
                         {item.title}
                       </h2>
-                      <p className="iceland-text uppercase text-[14px] font-normal text-gray01">
+                      <p className="iceland-text uppercase md:text-[14px] text-[12px] font-normal text-gray01">
                         {item.text}
                       </p>
                       {idx === 1 || idx === 3 ? (
@@ -122,7 +140,7 @@ const BegginingContent = () => {
                 </div>
               </div>
               {/* logs */}
-              <div className="flex flex-col gap-[9px]">
+              <div className="md:flex hidden flex-col gap-[9px]">
                 <h2 className="iceland-text text-[18px] font-normal text-left">
                   older logs:
                 </h2>
@@ -223,8 +241,31 @@ const BegginingContent = () => {
           </div>
         </div>
       </div>
+      <div>
+        <HeroButtons
+          setOpenCredits={setOpenCredits}
+          setOpenModal={setOpenModal}
+          className={"md:hidden"}
+        />
+      </div>
+      {openModal && (
+        <Navigate
+          audioClick={audioClick}
+          soundClick={soundClick}
+          musicSwitch={musicSwitch}
+          isPlay={isPlay}
+          switchRef={switchRef}
+          soundSwitch={soundSwitch}
+          isSound={isSound}
+          audioRef={audioRef}
+          openContent={openContent}
+          color={color}
+          setOpenModal={setOpenModal}
+        
+        />
+      )}
     </main>
   );
 };
 
-export default BegginingContent;
+export default LogsContent;

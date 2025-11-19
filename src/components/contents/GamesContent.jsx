@@ -6,11 +6,31 @@ import game4 from "../../assets/images/gamesContent/img4.png";
 import game5 from "../../assets/images/gamesContent/img5.png";
 import game6 from "../../assets/images/gamesContent/img6.png";
 import { useTheme } from "../../hook/useTheme";
+import HeroButtons from "../../mobile/HeroButtons";
+import Navigate from "../Navigate";
 
-const GamesContent = () => {
-  const { color } = useTheme();
+const GamesContent = ({
+  openContent,
+
+  isSound,
+
+  isPlay,
+
+  setOpenForHire,
+  setOpenConnect,
+  setOpenCredits,
+  setOpenModal,
+  openModal,
+  color,
+  audioClick,
+  soundClick,
+  soundSwitch,
+  musicSwitch,
+  switchRef,
+  audioRef,
+}) => {
   return (
-    <main className="relative flex items-center justify-center w-full h-screen overflow-hidden px-[290px] py-[92px]">
+    <main className="relative flex flex-col md:flex-row items-center justify-center w-full h-screen overflow-hidden md:px-[290px] md:py-[92px] px-[10px] py-[10px] gap-[20px] md:gap-0">
       <div
         className={clsx(
           "w-full h-full inline-block z-10",
@@ -34,7 +54,7 @@ const GamesContent = () => {
             </h2>
             <div>
               <div className="absolute top-0 py-[92px] left-[15%]">
-                <h2 className="iceland-text text-[14px] tracking-normal text-gray02 text-start">
+                <h2 className="iceland-text text-[14px] tracking-normal text-gray02 text-start md:block hidden">
                   Here you will see a few mini <br /> games I implemented in
                   <br />
                   React or in Canvas.
@@ -43,7 +63,7 @@ const GamesContent = () => {
                 </h2>
               </div>
               {/* content */}
-              <div className="grid grid-cols-2 gap-[16px]">
+              <div className="grid grid-cols-2 gap-[16px] px-[15px] md:px-0">
                 {/* 1 */}
                 <div className="flex flex-col gap-[6px]">
                   <img src={game1} alt="" />
@@ -151,6 +171,28 @@ const GamesContent = () => {
           </div>
         </div>
       </div>
+      <div>
+        <HeroButtons
+          setOpenCredits={setOpenCredits}
+          setOpenModal={setOpenModal}
+          className={"md:hidden"}
+        />
+      </div>
+      {openModal && (
+        <Navigate
+          audioClick={audioClick}
+          soundClick={soundClick}
+          musicSwitch={musicSwitch}
+          isPlay={isPlay}
+          switchRef={switchRef}
+          soundSwitch={soundSwitch}
+          isSound={isSound}
+          audioRef={audioRef}
+          openContent={openContent}
+          color={color}
+          setOpenModal={setOpenModal}
+        />
+      )}
     </main>
   );
 };

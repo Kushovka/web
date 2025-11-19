@@ -4,11 +4,28 @@ import icon2 from "../../assets/images/achievementsContent/icon2.png";
 import icon4 from "../../assets/images/achievementsContent/icon4.png";
 import { useTheme } from "../../hook/useTheme";
 import clsx from "clsx";
+import HeroButtons from "../../mobile/HeroButtons";
+import Navigate from "../Navigate";
 
-const AchievementsContent = () => {
-  const { color } = useTheme();
+const AchievementsContent = ({
+  openContent,
+  isSound,
+  isPlay,
+  setOpenForHire,
+  setOpenConnect,
+  setOpenCredits,
+  setOpenModal,
+  openModal,
+  color,
+  audioClick,
+  soundClick,
+  soundSwitch,
+  musicSwitch,
+  switchRef,
+  audioRef,
+}) => {
   return (
-    <main className="relative flex items-center justify-center w-full h-screen overflow-hidden px-[290px] py-[92px]">
+    <main className="relative flex md:flex-row flex-col items-center justify-center w-full h-screen overflow-hidden md:px-[290px] px-[20px] py-[20px] md:py-[92px] gap-[20px] md:gap-0">
       <div
         className={clsx(
           "w-full h-full inline-block z-10",
@@ -31,10 +48,10 @@ const AchievementsContent = () => {
               Achievements
             </h2>
             {/* content */}
-            <div className="flex gap-[18px]">
+            <div className="flex flex-col md:flex-row gap-[18px]">
               {/* progress */}
               <div className="flex flex-col  gap-[15px]">
-                <div className="border border-white/10  pt-[28px] p-[48px] flex flex-col gap-[11px]">
+                <div className="border border-white/10  md:pt-[28px] md:p-[48px] p-[10px] flex flex-col gap-[11px]">
                   <div className="relative left-1/2 -translate-x-1/2">
                     <div className="relative left-1/2 -translate-x-12">
                       <svg
@@ -78,7 +95,7 @@ const AchievementsContent = () => {
                     progress
                   </h2>
                 </div>
-                <div>
+                <div className="md:block hidden">
                   <p className="iceland-text font-normal text-[14px] text-gray01 tracking-normal text-start">
                     I have created a set of
                     <br /> achievements for myself
@@ -104,7 +121,7 @@ const AchievementsContent = () => {
                 </div>
               </div>
               {/* cards */}
-              <div className="flex flex-col gap-[60px]">
+              <div className="flex flex-col gap-[60px] px-[10px] md:px-0">
                 <div className="flex flex-col gap-[22px]">
                   <div>
                     <p className="text-left iceberg-text text-[12px] tracking-normal ">
@@ -125,6 +142,7 @@ const AchievementsContent = () => {
                     textVariant={"text-gold01"}
                   />
                   <CardAchievements
+                    className={"md:block hidden"}
                     title={"released personal website"}
                     text={
                       "the site you are looking at right now -- yes, I did it! And it took me a few months."
@@ -161,7 +179,7 @@ const AchievementsContent = () => {
                 </div>
               </div>
               {/* buttons */}
-              <div className="flex flex-col gap-[8px]">
+              <div className="md:flex hidden flex-col gap-[8px]">
                 <div className="flex gap-[9px]">
                   <div
                     className={clsx(
@@ -215,6 +233,28 @@ const AchievementsContent = () => {
           </div>
         </div>
       </div>
+      <div>
+        <HeroButtons
+          setOpenCredits={setOpenCredits}
+          setOpenModal={setOpenModal}
+          className={"md:hidden"}
+        />
+      </div>
+      {openModal && (
+        <Navigate
+          audioClick={audioClick}
+          soundClick={soundClick}
+          musicSwitch={musicSwitch}
+          isPlay={isPlay}
+          switchRef={switchRef}
+          soundSwitch={soundSwitch}
+          isSound={isSound}
+          audioRef={audioRef}
+          openContent={openContent}
+          color={color}
+          setOpenModal={setOpenModal}
+        />
+      )}
     </main>
   );
 };
