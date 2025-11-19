@@ -23,40 +23,12 @@ const Navigate = ({
   setOpenModal
 }) => {
   return (
-    <section className="fixed bg-black z-30 h-screen w-full p-[30px] left-0 top-0  flex flex-col gap-[30px]">
+    <section className="fixed bg-black z-30 h-screen w-full p-[30px] left-0 top-0  flex flex-col gap-[15px]">
       <div className="flex items-center justify-between border-b pb-[10px]">
         <h1 className="big-text font-extrabold text-[26px] ">navigation</h1>
         <button onClick={() => setOpenModal(false)}>
           <IoCloseSharp className={clsx("text-[28px] text-white")} />
         </button>
-      </div>
-      <div className="flex gap-[46px]">
-        <div className="flex items-end justify-center gap-[2px]">
-          <h2 className="big-text font-extrabold text-[26px] text-green01">
-            48
-          </h2>
-          <p className="big-text text-[16px] font-extrabold opacity-60">
-            Level
-          </p>
-        </div>
-        <div className="flex items-end justify-center gap-[16px]">
-          <button className="border border-black03  flex items-center justify-center w-[33px] h-[33px] ">
-            <IoCloseSharp
-              className={clsx(
-                "text-[16px] rotate-45",
-                color === "red" ? "text-red01" : "text-purple01"
-              )}
-            />
-          </button>
-          <div className="flex items-end justify-center gap-[6px]">
-            <h2 className="big-text font-extrabold text-[26px] text-green01">
-              1,425
-            </h2>
-            <p className="big-text text-[16px] font-extrabold opacity-60">
-              coins awarded
-            </p>
-          </div>
-        </div>
       </div>
       <div
         className={clsx(

@@ -283,7 +283,7 @@ const CreationsContent = ({
                         </div>
                       </div>
                       {/* 2 */}
-                      <div className="flex items-center gap-[12px]">
+                      <div className="md:flex hidden items-center gap-[12px]">
                         <div
                           className={clsx(
                             "p-[12px]",
@@ -307,7 +307,7 @@ const CreationsContent = ({
                         </div>
                       </div>
                       {/* 3 */}
-                      <div className="flex items-center gap-[12px]">
+                      <div className="md:flex hidden items-center gap-[12px]">
                         <div
                           className={clsx(
                             "p-[12px]",
@@ -331,7 +331,7 @@ const CreationsContent = ({
                         </div>
                       </div>
                       {/* 4 */}
-                      <div className="flex items-center gap-[12px]">
+                      <div className="md:flex hidden items-center gap-[12px]">
                         <div
                           className={clsx(
                             "p-[12px]",
@@ -355,7 +355,7 @@ const CreationsContent = ({
                         </div>
                       </div>
                       {/* 5 */}
-                      <div className="flex items-center gap-[12px]">
+                      <div className="md:flex hidden items-center gap-[12px]">
                         <div
                           className={clsx(
                             "p-[12px]",

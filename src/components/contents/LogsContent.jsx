@@ -23,9 +23,8 @@ const LogsContent = ({
   switchRef,
   audioRef,
 }) => {
-  
   return (
-    <main className="relative flex flex-col md:flex-row gap-[20px] md:gap-0 items-center justify-center w-full h-screen overflow-hidden md:px-[290px] px-[10px] md:py-[92px] py-[10px]">
+    <main className="relative flex flex-col md:flex-row gap-[30px] md:gap-0 items-center justify-center w-full h-screen overflow-hidden md:px-[290px] px-[10px] md:py-[92px]">
       <div
         className={clsx(
           "w-full md:h-full inline-block z-10",
@@ -85,7 +84,12 @@ const LogsContent = ({
                   {logsCards.map((item, idx) => (
                     <div
                       key={idx}
-                      className="relative border border-white/10 rounded-tl-[12px] py-[15px] pr-[13px] pl-[18px] bg-black"
+                      className={clsx(
+                        "relative border border-white/10 rounded-tl-[12px] py-[15px] pr-[13px] pl-[18px] bg-black",
+                        idx !== 1 && idx !== 3
+                          ? "hidden sm:hidden md:block"
+                          : "block md:block"
+                      )}
                     >
                       <h2
                         className={clsx(
@@ -99,7 +103,7 @@ const LogsContent = ({
                         {item.text}
                       </p>
                       {idx === 1 || idx === 3 ? (
-                        <button className="flex items-center gap-[4px]">
+                        <button className="flex  items-center gap-[4px]">
                           <IoCloseSharp
                             className={clsx(
                               " text-[12px] rotate-45",
@@ -261,7 +265,6 @@ const LogsContent = ({
           openContent={openContent}
           color={color}
           setOpenModal={setOpenModal}
-        
         />
       )}
     </main>

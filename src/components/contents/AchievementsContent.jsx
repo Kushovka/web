@@ -158,7 +158,7 @@ const AchievementsContent = ({
                 </div>
                 <div className="flex flex-col gap-[22px]">
                   <div>
-                    <p className="text-left iceberg-text text-[12px] tracking-normal ">
+                    <p className="text-left iceberg-text text-[12px] tracking-normal md:block hidden">
                       to be achieved:
                     </p>
                   </div>
@@ -175,6 +175,7 @@ const AchievementsContent = ({
                     variant3={"bg-blue01/15"}
                     textVariant={"text-blue01"}
                     opacity
+                    className={"md:block hidden"}
                   />
                 </div>
               </div>
