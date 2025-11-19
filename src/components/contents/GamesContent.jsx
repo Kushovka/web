@@ -33,7 +33,7 @@ const GamesContent = ({
     <main className="relative flex flex-col md:flex-row items-center justify-center w-full h-screen overflow-hidden md:px-[290px] md:py-[92px] px-[10px] py-[10px] gap-[20px] md:gap-0">
       <div
         className={clsx(
-          "w-full h-full inline-block z-10",
+          "w-full md:h-full h-[60%] inline-block z-10",
           color === "red" ? "border-frame" : "border-frame_purple"
         )}
       >
@@ -47,7 +47,7 @@ const GamesContent = ({
           <div
             className={clsx(color === "red" ? "sphere-2" : "sphere-2_purple")}
           ></div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center w-full items-center flex flex-col gap-[40px] pt-[39px]">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center w-full items-center flex flex-col md:gap-[40px] gap-[15px] md:pt-[39px] pt-[15px]">
             {/* title */}
             <h2 className="iceland-text text-[18px] font-normal ">
               mini games
@@ -133,7 +133,7 @@ const GamesContent = ({
                   </div>
                 </div>
                 {/* 5 */}
-                <div className="flex flex-col gap-[6px]">
+                <div className="md:flex hidden flex-col gap-[6px]">
                   <img src={game5} alt="" />
                   <div className="flex flex-col gap-[2px]">
                     <h2
@@ -150,7 +150,7 @@ const GamesContent = ({
                   </div>
                 </div>
                 {/* 6 */}
-                <div className="flex flex-col gap-[6px]">
+                <div className="md:flex hidden flex-col gap-[6px]">
                   <img src={game6} alt="" />
                   <div className="flex flex-col gap-[2px]">
                     <h2

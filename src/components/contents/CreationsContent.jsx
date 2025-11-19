@@ -37,7 +37,7 @@ const CreationsContent = ({
     <main className="relative flex flex-col md:flex-row items-center justify-center w-full h-screen overflow-hidden md:px-[290px] md:py-[92px] px-[10px] py-[10px] gap-[20px] md:gap-0">
       <div
         className={clsx(
-          "w-full h-full inline-block z-10",
+          "w-full md:h-full h-[80%] inline-block z-10",
           color === "red" ? "border-frame" : "border-frame_purple"
         )}
       >
@@ -51,7 +51,7 @@ const CreationsContent = ({
           <div
             className={clsx(color === "red" ? "sphere-2" : "sphere-2_purple")}
           ></div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full items-center flex flex-col gap-[40px] pt-[39px]">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full items-center flex flex-col md:gap-[40px] gap-[15px] md:pt-[39px] pt-[15px]">
             {/* title */}
             <h2 className="iceland-text text-[18px] font-normal ">Creations</h2>
             {/* content */}

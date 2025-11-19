@@ -25,10 +25,10 @@ const AchievementsContent = ({
   audioRef,
 }) => {
   return (
-    <main className="relative flex md:flex-row flex-col items-center justify-center w-full h-screen overflow-hidden md:px-[290px] px-[20px] py-[20px] md:py-[92px] gap-[20px] md:gap-0">
+    <main className="relative flex md:flex-row flex-col items-center justify-center w-full h-screen overflow-hidden md:px-[290px] px-[20px] py-[20px] md:py-[92px] gap-[30px] md:gap-0">
       <div
         className={clsx(
-          "w-full h-full inline-block z-10",
+          "w-full md:h-full h-[75%] inline-block z-10",
           color === "red" ? "border-frame" : "border-frame_purple"
         )}
       >
@@ -42,7 +42,7 @@ const AchievementsContent = ({
           <div
             className={clsx(color === "red" ? "sphere-2" : "sphere-2_purple")}
           ></div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center w-full items-center flex flex-col gap-[40px] pt-[39px]">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center w-full items-center flex flex-col md:gap-[40px] gap-[15px] md:pt-[39px] pt-[15px]">
             {/* title */}
             <h2 className="iceland-text text-[18px] font-normal ">
               Achievements
@@ -121,7 +121,7 @@ const AchievementsContent = ({
                 </div>
               </div>
               {/* cards */}
-              <div className="flex flex-col gap-[60px] px-[10px] md:px-0">
+              <div className="flex flex-col md:gap-[60px] px-[10px] md:px-0">
                 <div className="flex flex-col gap-[22px]">
                   <div>
                     <p className="text-left iceberg-text text-[12px] tracking-normal ">
