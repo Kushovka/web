@@ -67,6 +67,28 @@ const HeroPage = ({ toggleMusic, isPlay, toggleSound, isSound }) => {
     toggleMusic();
   }
 
+  const commonProps = {
+    openContent,
+    setOpenContent,
+    toggleSound,
+    isSound,
+    toggleMusic,
+    isPlay,
+    setOpenSettings,
+    setOpenForHire,
+    setOpenConnect,
+    setOpenCredits,
+    setOpenModal,
+    openModal,
+    color,
+    audioClick,
+    soundClick,
+    soundSwitch,
+    musicSwitch,
+    switchRef,
+    audioRef,
+  };
+
   return (
     <section className="relative h-screen w-full">
       <div
@@ -133,127 +155,27 @@ const HeroPage = ({ toggleMusic, isPlay, toggleSound, isSound }) => {
           <AnimatePresence mode="wait">
             {openContent === 1 && (
               <FadeIn key="1">
-                <BegginingContent
-                  openContent={openContent}
-                  setOpenContent={setOpenContent}
-                  toggleSound={toggleSound}
-                  isSound={isSound}
-                  toggleMusic={toggleMusic}
-                  isPlay={isPlay}
-                  setOpenSettings={setOpenSettings}
-                  setOpenForHire={setOpenForHire}
-                  setOpenConnect={setOpenConnect}
-                  setOpenCredits={setOpenCredits}
-                  setOpenModal={setOpenModal}
-                  openModal={openModal}
-                  color={color}
-                  audioClick={audioClick}
-                  soundClick={soundClick}
-                  soundSwitch={soundSwitch}
-                  musicSwitch={musicSwitch}
-                  switchRef={switchRef}
-                  audioRef={audioRef}
-                />
+                <BegginingContent {...commonProps} />
               </FadeIn>
             )}
             {openContent === 2 && (
               <FadeIn key="2">
-                <LogsContent
-                  setOpenModal={setOpenModal}
-                  setOpenCredits={setOpenCredits}
-                  openModal={openModal}
-                  openContent={openContent}
-                  setOpenContent={setOpenContent}
-                  toggleSound={toggleSound}
-                  isSound={isSound}
-                  toggleMusic={toggleMusic}
-                  isPlay={isPlay}
-                  setOpenSettings={setOpenSettings}
-                  setOpenForHire={setOpenForHire}
-                  setOpenConnect={setOpenConnect}
-                  color={color}
-                  audioClick={audioClick}
-                  soundClick={soundClick}
-                  soundSwitch={soundSwitch}
-                  musicSwitch={musicSwitch}
-                  switchRef={switchRef}
-                  audioRef={audioRef}
-                />
+                <LogsContent {...commonProps} />
               </FadeIn>
             )}
             {openContent === 3 && (
               <FadeIn key="3">
-                <AchievementsContent
-                  setOpenModal={setOpenModal}
-                  setOpenCredits={setOpenCredits}
-                  openModal={openModal}
-                  openContent={openContent}
-                  setOpenContent={setOpenContent}
-                  toggleSound={toggleSound}
-                  isSound={isSound}
-                  toggleMusic={toggleMusic}
-                  isPlay={isPlay}
-                  setOpenSettings={setOpenSettings}
-                  setOpenForHire={setOpenForHire}
-                  setOpenConnect={setOpenConnect}
-                  color={color}
-                  audioClick={audioClick}
-                  soundClick={soundClick}
-                  soundSwitch={soundSwitch}
-                  musicSwitch={musicSwitch}
-                  switchRef={switchRef}
-                  audioRef={audioRef}
-                />
+                <AchievementsContent {...commonProps} />
               </FadeIn>
             )}
             {openContent === 4 && (
               <FadeIn key="4">
-                <CreationsContent
-                  openContent={openContent}
-                  setOpenContent={setOpenContent}
-                  toggleSound={toggleSound}
-                  isSound={isSound}
-                  toggleMusic={toggleMusic}
-                  isPlay={isPlay}
-                  setOpenSettings={setOpenSettings}
-                  setOpenForHire={setOpenForHire}
-                  setOpenConnect={setOpenConnect}
-                  setOpenCredits={setOpenCredits}
-                  setOpenModal={setOpenModal}
-                  openModal={openModal}
-                  color={color}
-                  audioClick={audioClick}
-                  soundClick={soundClick}
-                  soundSwitch={soundSwitch}
-                  musicSwitch={musicSwitch}
-                  switchRef={switchRef}
-                  audioRef={audioRef}
-                />
+                <CreationsContent {...commonProps} />
               </FadeIn>
             )}
             {openContent === 5 && (
               <FadeIn key="5">
-                <GamesContent
-                  openContent={openContent}
-                  setOpenContent={setOpenContent}
-                  toggleSound={toggleSound}
-                  isSound={isSound}
-                  toggleMusic={toggleMusic}
-                  isPlay={isPlay}
-                  setOpenSettings={setOpenSettings}
-                  setOpenForHire={setOpenForHire}
-                  setOpenConnect={setOpenConnect}
-                  setOpenCredits={setOpenCredits}
-                  setOpenModal={setOpenModal}
-                  openModal={openModal}
-                  color={color}
-                  audioClick={audioClick}
-                  soundClick={soundClick}
-                  soundSwitch={soundSwitch}
-                  musicSwitch={musicSwitch}
-                  switchRef={switchRef}
-                  audioRef={audioRef}
-                />
+                <GamesContent {...commonProps} />
               </FadeIn>
             )}
             {openContent === 6 && (

@@ -8,20 +8,16 @@ import { IoCloseSharp } from "react-icons/io5";
 import { CiImageOn } from "react-icons/ci";
 
 import polygon from "../../assets/images/creationsContent/polygon.png";
-import { useTheme } from "../../hook/useTheme";
+
 import clsx from "clsx";
 import HeroButtons from "../../mobile/HeroButtons";
 import Navigate from "../Navigate";
 
 const CreationsContent = ({
   openContent,
-
   isSound,
-
   isPlay,
-
   setOpenForHire,
-  setOpenConnect,
   setOpenCredits,
   setOpenModal,
   openModal,
@@ -33,8 +29,11 @@ const CreationsContent = ({
   switchRef,
   audioRef,
 }) => {
+  const getColor = (redColor, purpleColor) =>
+    color === "red" ? redColor : purpleColor;
+
   return (
-    <main className="relative flex flex-col md:flex-row items-center justify-center w-full h-screen overflow-hidden md:px-[290px] md:py-[92px] px-[10px] py-[10px] gap-[20px] md:gap-0">
+    <main className="section">
       <div
         className={clsx(
           "w-full md:h-full h-[80%] inline-block z-10",
@@ -78,7 +77,7 @@ const CreationsContent = ({
                       <h2
                         className={clsx(
                           "big-text text-[18px] font-extrabold ",
-                          color === "red" ? "text-red01" : "text-purple01"
+                          getColor("text-red01", "text-purple01")
                         )}
                       >
                         Legacy.ai
@@ -92,7 +91,7 @@ const CreationsContent = ({
                       <h2
                         className={clsx(
                           "big-text text-[18px] font-extrabold ",
-                          color === "red" ? "text-red01" : "text-purple01"
+                          getColor("text-red01", "text-purple01")
                         )}
                       >
                         one sentence explanation for what the project is.
@@ -124,7 +123,7 @@ const CreationsContent = ({
                           <FaReact
                             className={clsx(
                               "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -139,7 +138,7 @@ const CreationsContent = ({
                           <FaNodeJs
                             className={clsx(
                               "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -154,7 +153,7 @@ const CreationsContent = ({
                           <FaFigma
                             className={clsx(
                               "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -169,7 +168,7 @@ const CreationsContent = ({
                           <FaJs
                             className={clsx(
                               "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -184,7 +183,7 @@ const CreationsContent = ({
                           <FaGit
                             className={clsx(
                               "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -209,13 +208,13 @@ const CreationsContent = ({
                     <IoCloseSharp
                       className={clsx(
                         " text-[12px] rotate-45",
-                        color === "red" ? "text-red01" : "text-purple01"
+                        getColor("text-red01", "text-purple01")
                       )}
                     />
                     <p
                       className={clsx(
                         "iceland-text font-normal text-[16px] ",
-                        color === "red" ? "text-red01" : "text-purple01"
+                        getColor("text-red01", "text-purple01")
                       )}
                     >
                       expand
@@ -235,7 +234,7 @@ const CreationsContent = ({
                   <div
                     className={clsx(
                       "flex items-center justify-between  p-[11px]",
-                      color === "red" ? "bg-red01/20" : "bg-purple01/20"
+                      getColor("bg-red01/20", "bg-purple01/20")
                     )}
                   >
                     <h2 className="iceland-text text-[14px] tracking-normal ">
@@ -244,7 +243,7 @@ const CreationsContent = ({
                     <IoCloseSharp
                       className={clsx(
                         " text-[16px]",
-                        color === "red" ? "text-red01" : "text-purple01"
+                        getColor("text-red01", "text-purple01")
                       )}
                     />
                   </div>
@@ -263,13 +262,13 @@ const CreationsContent = ({
                         <div
                           className={clsx(
                             "p-[12px]",
-                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                            getColor("text-red01/30", "text-purple01/30")
                           )}
                         >
                           <CiImageOn
                             className={clsx(
                               "w-[24px] h-[24px]",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -287,13 +286,13 @@ const CreationsContent = ({
                         <div
                           className={clsx(
                             "p-[12px]",
-                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                            getColor("text-red01/30", "text-purple01/30")
                           )}
                         >
                           <CiImageOn
                             className={clsx(
                               "w-[24px] h-[24px]",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -311,13 +310,13 @@ const CreationsContent = ({
                         <div
                           className={clsx(
                             "p-[12px]",
-                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                            getColor("text-red01/30", "text-purple01/30")
                           )}
                         >
                           <CiImageOn
                             className={clsx(
                               "w-[24px] h-[24px]",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -335,13 +334,13 @@ const CreationsContent = ({
                         <div
                           className={clsx(
                             "p-[12px]",
-                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                            getColor("text-red01/30", "text-purple01/30")
                           )}
                         >
                           <CiImageOn
                             className={clsx(
                               "w-[24px] h-[24px]",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -359,13 +358,13 @@ const CreationsContent = ({
                         <div
                           className={clsx(
                             "p-[12px]",
-                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                            getColor("text-red01/30", "text-purple01/30")
                           )}
                         >
                           <CiImageOn
                             className={clsx(
                               "w-[24px] h-[24px]",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -383,13 +382,13 @@ const CreationsContent = ({
                         <div
                           className={clsx(
                             "p-[12px]",
-                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                            getColor("text-red01/30", "text-purple01/30")
                           )}
                         >
                           <CiImageOn
                             className={clsx(
                               "w-[24px] h-[24px]",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -409,13 +408,13 @@ const CreationsContent = ({
                         <div
                           className={clsx(
                             "p-[12px]",
-                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                            getColor("text-red01/30", "text-purple01/30")
                           )}
                         >
                           <CiImageOn
                             className={clsx(
                               "w-[24px] h-[24px]",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -433,13 +432,13 @@ const CreationsContent = ({
                         <div
                           className={clsx(
                             "p-[12px]",
-                            color === "red" ? "bg-red01/30" : "bg-purple01/30"
+                            getColor("text-red01/30", "text-purple01/30")
                           )}
                         >
                           <CiImageOn
                             className={clsx(
                               "w-[24px] h-[24px]",
-                              color === "red" ? "text-red01" : "text-purple01"
+                              getColor("text-red01", "text-purple01")
                             )}
                           />
                         </div>
@@ -459,9 +458,10 @@ const CreationsContent = ({
                   <button
                     className={clsx(
                       " hover:rounded-[6px] transition-all duration-300 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center text-black",
-                      color === "red"
-                        ? "bg-red01/70 hover:bg-red01"
-                        : "bg-purple01/70 hover:bg-purple01 text-white/70"
+                      getColor(
+                        "bg-red01/70 hover:bg-red01",
+                        "bg-purple01/70 hover:bg-purple01 text-white/70"
+                      )
                     )}
                   >
                     view project demo
@@ -469,9 +469,10 @@ const CreationsContent = ({
                   <button
                     className={clsx(
                       "border  hover:rounded-[6px] transition-all duration-300 border-gray03 px-[30px] py-[6px] big-text text-[18px] font-extrabold text-center ",
-                      color === "red"
-                        ? "hover:bg-red01/20 text-red01"
-                        : "hover:bg-purple01/20 text-purple01"
+                      getColor(
+                        "hover:bg-red01/20 text-red01",
+                        "hover:bg-purple01/20 text-purple01"
+                      )
                     )}
                   >
                     Back to all projects

@@ -5,19 +5,14 @@ import game3 from "../../assets/images/gamesContent/img3.png";
 import game4 from "../../assets/images/gamesContent/img4.png";
 import game5 from "../../assets/images/gamesContent/img5.png";
 import game6 from "../../assets/images/gamesContent/img6.png";
-import { useTheme } from "../../hook/useTheme";
+
 import HeroButtons from "../../mobile/HeroButtons";
 import Navigate from "../Navigate";
 
 const GamesContent = ({
   openContent,
-
   isSound,
-
   isPlay,
-
-  setOpenForHire,
-  setOpenConnect,
   setOpenCredits,
   setOpenModal,
   openModal,
@@ -30,7 +25,7 @@ const GamesContent = ({
   audioRef,
 }) => {
   return (
-    <main className="relative flex flex-col md:flex-row items-center justify-center w-full h-screen overflow-hidden md:px-[290px] md:py-[92px] px-[10px] py-[10px] gap-[20px] md:gap-0">
+    <main className="section">
       <div
         className={clsx(
           "w-full md:h-full h-[60%] inline-block z-10",

@@ -2,7 +2,6 @@ import CardAchievements from "../CardAchievements";
 import icon1 from "../../assets/images/achievementsContent/icon1.png";
 import icon2 from "../../assets/images/achievementsContent/icon2.png";
 import icon4 from "../../assets/images/achievementsContent/icon4.png";
-import { useTheme } from "../../hook/useTheme";
 import clsx from "clsx";
 import HeroButtons from "../../mobile/HeroButtons";
 import Navigate from "../Navigate";
@@ -11,8 +10,6 @@ const AchievementsContent = ({
   openContent,
   isSound,
   isPlay,
-  setOpenForHire,
-  setOpenConnect,
   setOpenCredits,
   setOpenModal,
   openModal,
@@ -25,7 +22,7 @@ const AchievementsContent = ({
   audioRef,
 }) => {
   return (
-    <main className="relative flex md:flex-row flex-col items-center justify-center w-full h-screen overflow-hidden md:px-[290px] px-[20px] py-[20px] md:py-[92px] gap-[30px] md:gap-0">
+    <main className="section">
       <div
         className={clsx(
           "w-full md:h-full h-[75%] inline-block z-10",

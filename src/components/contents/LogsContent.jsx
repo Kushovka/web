@@ -1,7 +1,6 @@
 import logsCards from "../../constants";
 import { IoCloseSharp } from "react-icons/io5";
 import { CiImageOn } from "react-icons/ci";
-import { useTheme } from "../../hook/useTheme";
 import clsx from "clsx";
 import HeroButtons from "../../mobile/HeroButtons";
 import Navigate from "../Navigate";
@@ -10,8 +9,6 @@ const LogsContent = ({
   openContent,
   isSound,
   isPlay,
-  setOpenForHire,
-  setOpenConnect,
   setOpenCredits,
   setOpenModal,
   openModal,
@@ -24,7 +21,7 @@ const LogsContent = ({
   audioRef,
 }) => {
   return (
-    <main className="relative flex flex-col md:flex-row gap-[30px] md:gap-0 items-center justify-center w-full h-screen overflow-hidden md:px-[290px] px-[10px] md:py-[92px]">
+    <main className="section">
       <div
         className={clsx(
           "w-full md:h-full inline-block z-10",

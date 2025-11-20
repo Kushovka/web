@@ -1,26 +1,15 @@
 import clsx from "clsx";
 import heroImg from "../../assets/images/heroPage/heroImg.png";
-import { useTheme } from "../../hook/useTheme";
+
 import WhoIsSection from "../../mobile/WhoIsSection";
 import HeroButtons from "../../mobile/HeroButtons";
-import { useRef, useState } from "react";
-import Button from "../Button";
-import sound from "../../audio/click.mp3";
-import switchSound from "../../audio/switch.mp3";
-import {
-  IoCheckmarkSharp,
-  IoCloseSharp,
-  IoSettingsOutline,
-} from "react-icons/io5";
+
 import Navigate from "../Navigate";
 
 const BegginingContent = ({
   openContent,
-
   isSound,
-
   isPlay,
-
   setOpenForHire,
   setOpenConnect,
   setOpenCredits,
@@ -35,16 +24,7 @@ const BegginingContent = ({
   audioRef,
 }) => {
   return (
-    <main
-      className=" relative flex flex-col
-  justify-between md:justify-center
-  md:flex-row md:items-center
-  w-full h-screen
-  overflow-hidden
-  md:px-[290px] px-[50px]
-  md:py-[92px] py-[45px]
-  gap-[20px] md:gap-0"
-    >
+    <main className="section">
       <div
         className={clsx(
           "inline-block w-full h-full z-10",
@@ -54,7 +34,7 @@ const BegginingContent = ({
         <img
           src={heroImg}
           className="block w-full h-full object-cover"
-          alt=""
+          alt="heroImg"
         />
         <span></span>
         <div className="absolute top-0 md:left-1/2 md:-translate-x-1/2 text-center flex flex-col gap-[9px] md:pt-[39px] px-[10px] pt-[15px]">
