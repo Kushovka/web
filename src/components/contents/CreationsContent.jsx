@@ -1,17 +1,13 @@
-import Button from "../Button";
-import { FaReact } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa";
-import { FaFigma } from "react-icons/fa";
-import { FaJs } from "react-icons/fa";
-import { FaGit } from "react-icons/fa";
+import { Suspense } from "react";
+import clsx from "clsx";
+
 import { IoCloseSharp } from "react-icons/io5";
 import { CiImageOn } from "react-icons/ci";
 
+import Button from "../Button";
 import polygon from "../../assets/images/creationsContent/polygon.png";
-
-import clsx from "clsx";
 import HeroButtons from "../../mobile/HeroButtons";
-import Navigate from "../Navigate";
+import { creationsFiles, creationsTechnologies } from "../../constants";
 
 const CreationsContent = ({
   openContent,
@@ -28,6 +24,7 @@ const CreationsContent = ({
   musicSwitch,
   switchRef,
   audioRef,
+  NavigateLazy,
 }) => {
   const getColor = (redColor, purpleColor) =>
     color === "red" ? redColor : purpleColor;
@@ -113,81 +110,26 @@ const CreationsContent = ({
                       colortext={"#ffffff"}
                     />
                     <div className="md:flex grid grid-cols-2 gap-[8px]">
-                      <div className="relative ">
-                        <div className="relative w-full h-full">
-                          <img
-                            src={polygon}
-                            alt=""
-                            className="w-full h-full object-contain"
-                          />
-                          <FaReact
-                            className={clsx(
-                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                      </div>
-                      <div className="relative ">
-                        <div className="relative w-full h-full">
-                          <img
-                            src={polygon}
-                            alt=""
-                            className="w-full h-full object-contain"
-                          />
-                          <FaNodeJs
-                            className={clsx(
-                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                      </div>
-                      <div className="relative ">
-                        <div className="relative w-full h-full">
-                          <img
-                            src={polygon}
-                            alt=""
-                            className="w-full h-full object-contain"
-                          />
-                          <FaFigma
-                            className={clsx(
-                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                      </div>
-                      <div className="relative ">
-                        <div className="relative w-full h-full">
-                          <img
-                            src={polygon}
-                            alt=""
-                            className="w-full h-full object-contain"
-                          />
-                          <FaJs
-                            className={clsx(
-                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                      </div>
-                      <div className="relative ">
-                        <div className="relative w-full h-full">
-                          <img
-                            src={polygon}
-                            alt=""
-                            className="w-full h-full object-contain"
-                          />
-                          <FaGit
-                            className={clsx(
-                              "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                      </div>
+                      {creationsTechnologies.map((item, idx) => {
+                        const Icon = item.icon;
+                        return (
+                          <div className="relative" key={idx}>
+                            <div className="relative w-full h-full">
+                              <img
+                                src={polygon}
+                                alt="polygon"
+                                className="w-full h-full object-contain"
+                              />
+                              <Icon
+                                className={clsx(
+                                  "absolute top-1/2 left-1/2 w-[24px] h-[24px]  -translate-x-1/2 -translate-y-1/2",
+                                  getColor("text-red01", "text-purple01")
+                                )}
+                              />
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -255,203 +197,35 @@ const CreationsContent = ({
                       /projects/the-name
                     </h2>
                   </div>
-                  <div className="flex justify-between">
-                    <div className="py-[14px] px-[12px] flex flex-col gap-[16px]">
-                      {/* 1 */}
-                      <div className="flex items-center gap-[12px]">
-                        <div
-                          className={clsx(
-                            "p-[12px]",
-                            getColor("text-red01/30", "text-purple01/30")
-                          )}
-                        >
-                          <CiImageOn
+
+                  <div className="py-[14px] px-[12px] grid grid-cols-2 gap-[16px]">
+                    {creationsFiles.map((item, idx) => (
+                      <div key={idx}>
+                        <div className="flex items-center gap-[12px]">
+                          <div
                             className={clsx(
-                              "w-[24px] h-[24px]",
-                              getColor("text-red01", "text-purple01")
+                              "p-[12px]",
+                              getColor("text-red01/30", "text-purple01/30")
                             )}
-                          />
-                        </div>
-                        <div className="flex flex-col gap-[4px]">
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            homepage.jpg
-                          </h2>
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            23kb
-                          </h2>
+                          >
+                            <CiImageOn
+                              className={clsx(
+                                "w-[24px] h-[24px]",
+                                getColor("text-red01", "text-purple01")
+                              )}
+                            />
+                          </div>
+                          <div className="flex flex-col gap-[4px]">
+                            <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
+                              {item.title}
+                            </h2>
+                            <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
+                              {item.size}
+                            </h2>
+                          </div>
                         </div>
                       </div>
-                      {/* 2 */}
-                      <div className="md:flex hidden items-center gap-[12px]">
-                        <div
-                          className={clsx(
-                            "p-[12px]",
-                            getColor("text-red01/30", "text-purple01/30")
-                          )}
-                        >
-                          <CiImageOn
-                            className={clsx(
-                              "w-[24px] h-[24px]",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                        <div className="flex flex-col gap-[4px]">
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            homepage.jpg
-                          </h2>
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            23kb
-                          </h2>
-                        </div>
-                      </div>
-                      {/* 3 */}
-                      <div className="md:flex hidden items-center gap-[12px]">
-                        <div
-                          className={clsx(
-                            "p-[12px]",
-                            getColor("text-red01/30", "text-purple01/30")
-                          )}
-                        >
-                          <CiImageOn
-                            className={clsx(
-                              "w-[24px] h-[24px]",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                        <div className="flex flex-col gap-[4px]">
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            homepage.jpg
-                          </h2>
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            23kb
-                          </h2>
-                        </div>
-                      </div>
-                      {/* 4 */}
-                      <div className="md:flex hidden items-center gap-[12px]">
-                        <div
-                          className={clsx(
-                            "p-[12px]",
-                            getColor("text-red01/30", "text-purple01/30")
-                          )}
-                        >
-                          <CiImageOn
-                            className={clsx(
-                              "w-[24px] h-[24px]",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                        <div className="flex flex-col gap-[4px]">
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            homepage.jpg
-                          </h2>
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            23kb
-                          </h2>
-                        </div>
-                      </div>
-                      {/* 5 */}
-                      <div className="md:flex hidden items-center gap-[12px]">
-                        <div
-                          className={clsx(
-                            "p-[12px]",
-                            getColor("text-red01/30", "text-purple01/30")
-                          )}
-                        >
-                          <CiImageOn
-                            className={clsx(
-                              "w-[24px] h-[24px]",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                        <div className="flex flex-col gap-[4px]">
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            homepage.jpg
-                          </h2>
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            23kb
-                          </h2>
-                        </div>
-                      </div>
-                      {/* 6 */}
-                      <div className="md:flex hidden items-center gap-[12px]">
-                        <div
-                          className={clsx(
-                            "p-[12px]",
-                            getColor("text-red01/30", "text-purple01/30")
-                          )}
-                        >
-                          <CiImageOn
-                            className={clsx(
-                              "w-[24px] h-[24px]",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                        <div className="flex flex-col gap-[4px]">
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            homepage.jpg
-                          </h2>
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            23kb
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="py-[14px] px-[120px] flex flex-col gap-[16px]">
-                      {/* 7 */}
-                      <div className="md:flex hidden items-center gap-[12px]">
-                        <div
-                          className={clsx(
-                            "p-[12px]",
-                            getColor("text-red01/30", "text-purple01/30")
-                          )}
-                        >
-                          <CiImageOn
-                            className={clsx(
-                              "w-[24px] h-[24px]",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                        <div className="flex flex-col gap-[4px]">
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            homepage.jpg
-                          </h2>
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            23kb
-                          </h2>
-                        </div>
-                      </div>
-                      {/* 8 */}
-                      <div className="md:flex hidden  items-center gap-[12px]">
-                        <div
-                          className={clsx(
-                            "p-[12px]",
-                            getColor("text-red01/30", "text-purple01/30")
-                          )}
-                        >
-                          <CiImageOn
-                            className={clsx(
-                              "w-[24px] h-[24px]",
-                              getColor("text-red01", "text-purple01")
-                            )}
-                          />
-                        </div>
-                        <div className="flex flex-col gap-[4px]">
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            homepage.jpg
-                          </h2>
-                          <h2 className="iceland-text text-[16px] tracking-normal text-gray02">
-                            23kb
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
                 <div className="md:flex hidden items-center justify-between gap-[16px]">
@@ -491,19 +265,21 @@ const CreationsContent = ({
         />
       </div>
       {openModal && (
-        <Navigate
-          audioClick={audioClick}
-          soundClick={soundClick}
-          musicSwitch={musicSwitch}
-          isPlay={isPlay}
-          switchRef={switchRef}
-          soundSwitch={soundSwitch}
-          isSound={isSound}
-          audioRef={audioRef}
-          openContent={openContent}
-          color={color}
-          setOpenModal={setOpenModal}
-        />
+        <Suspense fallback={null}>
+          <NavigateLazy
+            audioClick={audioClick}
+            soundClick={soundClick}
+            musicSwitch={musicSwitch}
+            isPlay={isPlay}
+            switchRef={switchRef}
+            soundSwitch={soundSwitch}
+            isSound={isSound}
+            audioRef={audioRef}
+            openContent={openContent}
+            color={color}
+            setOpenModal={setOpenModal}
+          />
+        </Suspense>
       )}
     </main>
   );

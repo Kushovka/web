@@ -1,10 +1,14 @@
+import clsx from "clsx";
+import { useTheme } from "../hook/useTheme";
+import React, { useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+
 import LeftContent from "../components/LeftContent";
 import RightContent from "../components/RightContent";
 import Header from "../components/Header";
 import BegginingContent from "../components/contents/BegginingContent";
 import LogsContent from "../components/contents/LogsContent";
 import BottomContent from "../components/BottomContent";
-import { useRef, useState } from "react";
 import AchievementsContent from "../components/contents/AchievementsContent";
 import CreationsContent from "../components/contents/CreationsContent";
 import GamesContent from "../components/contents/GamesContent";
@@ -12,11 +16,10 @@ import OpenForHireModal from "../components/OpenForHireModal";
 import ConnectModal from "../components/ConnectModal";
 import CreditsModal from "../components/CreditsModal";
 import WhoIsContent from "../components/contents/WhoIsContent";
-import { AnimatePresence } from "framer-motion";
 import FadeIn from "../animations/FadeIn";
 import SettingsModal from "../components/SettingsModal";
-import { useTheme } from "../hook/useTheme";
-import clsx from "clsx";
+
+const NavigateLazy = React.lazy(() => import("../components/Navigate"));
 
 const HeroPage = ({ toggleMusic, isPlay, toggleSound, isSound }) => {
   const { color } = useTheme();
@@ -87,6 +90,7 @@ const HeroPage = ({ toggleMusic, isPlay, toggleSound, isSound }) => {
     musicSwitch,
     switchRef,
     audioRef,
+    NavigateLazy,
   };
 
   return (

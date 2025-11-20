@@ -1,5 +1,7 @@
 import clsx from "clsx";
+
 import img1 from "../../assets/images/whoContent/img1.png";
+
 import { useTheme } from "../../hook/useTheme";
 
 const WhoIsContent = () => {

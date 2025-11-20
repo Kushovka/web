@@ -1,10 +1,12 @@
-import CardAchievements from "../CardAchievements";
+import { Suspense } from "react";
+import clsx from "clsx";
+
 import icon1 from "../../assets/images/achievementsContent/icon1.png";
 import icon2 from "../../assets/images/achievementsContent/icon2.png";
 import icon4 from "../../assets/images/achievementsContent/icon4.png";
-import clsx from "clsx";
+
 import HeroButtons from "../../mobile/HeroButtons";
-import Navigate from "../Navigate";
+import CardAchievements from "../CardAchievements";
 
 const AchievementsContent = ({
   openContent,
@@ -20,6 +22,7 @@ const AchievementsContent = ({
   musicSwitch,
   switchRef,
   audioRef,
+  NavigateLazy,
 }) => {
   return (
     <main className="section">
@@ -239,19 +242,21 @@ const AchievementsContent = ({
         />
       </div>
       {openModal && (
-        <Navigate
-          audioClick={audioClick}
-          soundClick={soundClick}
-          musicSwitch={musicSwitch}
-          isPlay={isPlay}
-          switchRef={switchRef}
-          soundSwitch={soundSwitch}
-          isSound={isSound}
-          audioRef={audioRef}
-          openContent={openContent}
-          color={color}
-          setOpenModal={setOpenModal}
-        />
+        <Suspense fallback={null}>
+          <NavigateLazy
+            audioClick={audioClick}
+            soundClick={soundClick}
+            musicSwitch={musicSwitch}
+            isPlay={isPlay}
+            switchRef={switchRef}
+            soundSwitch={soundSwitch}
+            isSound={isSound}
+            audioRef={audioRef}
+            openContent={openContent}
+            color={color}
+            setOpenModal={setOpenModal}
+          />
+        </Suspense>
       )}
     </main>
   );

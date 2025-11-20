@@ -1,18 +1,16 @@
-import Button from "./Button";
-
-import icon1 from "../assets/images/rewardsIcons/icon1.png";
-import icon2 from "../assets/images/rewardsIcons/icon2.png";
-
+import clsx from "clsx";
+import { useTheme } from "../hook/useTheme";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { IoSettingsOutline } from "react-icons/io5";
 import { useRef } from "react";
 
+import icon1 from "../assets/images/rewardsIcons/icon1.png";
+import icon2 from "../assets/images/rewardsIcons/icon2.png";
 import sound from "../audio/click2.mp3";
 import switchSound from "../audio/switch.mp3";
 
-import clsx from "clsx";
-import { useTheme } from "../hook/useTheme";
+import Button from "./Button";
 
 const RightContent = ({
   setOpenSettings,

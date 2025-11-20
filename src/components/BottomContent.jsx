@@ -1,8 +1,10 @@
-import { useRef, useState } from "react";
-import Button from "./Button";
-import sound from "../audio/click.mp3";
-import { useTheme } from "../hook/useTheme";
 import clsx from "clsx";
+import { useRef } from "react";
+import { useTheme } from "../hook/useTheme";
+
+import sound from "../audio/click.mp3";
+
+import Button from "./Button";
 
 const BottomContent = ({ setOpenContent, openContent, isSound }) => {
   const { color } = useTheme();

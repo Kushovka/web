@@ -1,11 +1,13 @@
-import imgAvatar from "../assets/images/homePage/avatar.png";
-import Button from "./Button";
-import { IoIosBluetooth } from "react-icons/io";
+import clsx from "clsx";
 import { useRef } from "react";
+import { useTheme } from "../hook/useTheme";
+import { IoIosBluetooth } from "react-icons/io";
+
+import imgAvatar from "../assets/images/homePage/avatar.png";
 import sound from "../audio/click2.mp3";
 import sound1 from "../audio/click.mp3";
-import { useTheme } from "../hook/useTheme";
-import clsx from "clsx";
+
+import Button from "./Button";
 
 const LeftContent = ({
   name,

@@ -1,9 +1,11 @@
-import logsCards from "../../constants";
+import { Suspense } from "react";
+import clsx from "clsx";
+
 import { IoCloseSharp } from "react-icons/io5";
 import { CiImageOn } from "react-icons/ci";
-import clsx from "clsx";
+
+import { logsCards } from "../../constants";
 import HeroButtons from "../../mobile/HeroButtons";
-import Navigate from "../Navigate";
 
 const LogsContent = ({
   openContent,
@@ -19,6 +21,7 @@ const LogsContent = ({
   musicSwitch,
   switchRef,
   audioRef,
+  NavigateLazy,
 }) => {
   return (
     <main className="section">
@@ -78,7 +81,7 @@ const LogsContent = ({
               {/* cards */}
               <div className="flex flex-col gap-[23px]">
                 <div className="grid md:grid-cols-2 text-left gap-[15px]">
-                  {logsCards.map((item, idx) => (
+                  {logsCards.cards.map((item, idx) => (
                     <div
                       key={idx}
                       className={clsx(
@@ -145,98 +148,32 @@ const LogsContent = ({
                 <h2 className="iceland-text text-[18px] font-normal text-left">
                   older logs:
                 </h2>
-                <div
-                  className={clsx(
-                    "flex items-center justify-between border  py-[3px] px-[6px]",
-                    color === "red" ? "border-red01" : "border-purple01"
-                  )}
-                >
-                  <h2
+                {logsCards.logs.map((item, idx) => (
+                  <div
+                    key={idx}
                     className={clsx(
-                      "big-text font-extrabold text-[18px] ",
-                      color === "red" ? "text-red01" : "text-purple01"
+                      "flex items-center justify-between border  py-[3px] px-[6px]",
+                      color === "red" ? "border-red01" : "border-purple01"
                     )}
                   >
-                    LOG ENTRY: PROJECT DEVELOPMENT UPDATE
-                  </h2>
-                  <p
-                    className={clsx(
-                      "iceberg-text text-[14px] ",
-                      color === "red" ? "text-red01" : "text-purple01"
-                    )}
-                  >
-                    DATE: 2007.04.25
-                  </p>
-                </div>
-                <div
-                  className={clsx(
-                    "flex items-center justify-between border  py-[3px] px-[6px]",
-                    color === "red" ? "border-red01" : "border-purple01"
-                  )}
-                >
-                  <h2
-                    className={clsx(
-                      "big-text font-extrabold text-[18px] ",
-                      color === "red" ? "text-red01" : "text-purple01"
-                    )}
-                  >
-                    LOG ENTRY: PROJECT DEVELOPMENT UPDATE
-                  </h2>
-                  <p
-                    className={clsx(
-                      "iceberg-text text-[14px] ",
-                      color === "red" ? "text-red01" : "text-purple01"
-                    )}
-                  >
-                    DATE: 2007.04.25
-                  </p>
-                </div>
-                <div
-                  className={clsx(
-                    "flex items-center justify-between border  py-[3px] px-[6px]",
-                    color === "red" ? "border-red01" : "border-purple01"
-                  )}
-                >
-                  <h2
-                    className={clsx(
-                      "big-text font-extrabold text-[18px] ",
-                      color === "red" ? "text-red01" : "text-purple01"
-                    )}
-                  >
-                    LOG ENTRY: PROJECT DEVELOPMENT UPDATE
-                  </h2>
-                  <p
-                    className={clsx(
-                      "iceberg-text text-[14px] ",
-                      color === "red" ? "text-red01" : "text-purple01"
-                    )}
-                  >
-                    DATE: 2007.04.25
-                  </p>
-                </div>
-                <div
-                  className={clsx(
-                    "flex items-center justify-between border  py-[3px] px-[6px]",
-                    color === "red" ? "border-red01" : "border-purple01"
-                  )}
-                >
-                  <h2
-                    className={clsx(
-                      "big-text font-extrabold text-[18px] ",
-                      color === "red" ? "text-red01" : "text-purple01"
-                    )}
-                  >
-                    LOG ENTRY: PROJECT DEVELOPMENT UPDATE
-                  </h2>
-                  <p
-                    className={clsx(
-                      "iceberg-text text-[14px] ",
-                      color === "red" ? "text-red01" : "text-purple01"
-                    )}
-                  >
-                    DATE: 2007.04.25
-                  </p>
-                </div>
+                    <h2
+                      className={clsx(
+                        "big-text font-extrabold text-[18px] ",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
+                      {item.title}
+                    </h2>
+                    <p
+                      className={clsx(
+                        "iceberg-text text-[14px] ",
+                        color === "red" ? "text-red01" : "text-purple01"
+                      )}
+                    >
+                      {item.date}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -250,19 +187,21 @@ const LogsContent = ({
         />
       </div>
       {openModal && (
-        <Navigate
-          audioClick={audioClick}
-          soundClick={soundClick}
-          musicSwitch={musicSwitch}
-          isPlay={isPlay}
-          switchRef={switchRef}
-          soundSwitch={soundSwitch}
-          isSound={isSound}
-          audioRef={audioRef}
-          openContent={openContent}
-          color={color}
-          setOpenModal={setOpenModal}
-        />
+        <Suspense fallback={null}>
+          <NavigateLazy
+            audioClick={audioClick}
+            soundClick={soundClick}
+            musicSwitch={musicSwitch}
+            isPlay={isPlay}
+            switchRef={switchRef}
+            soundSwitch={soundSwitch}
+            isSound={isSound}
+            audioRef={audioRef}
+            openContent={openContent}
+            color={color}
+            setOpenModal={setOpenModal}
+          />
+        </Suspense>
       )}
     </main>
   );

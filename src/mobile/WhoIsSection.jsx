@@ -1,7 +1,8 @@
 import clsx from "clsx";
-import Button from "../components/Button";
 import { IoIosBluetooth } from "react-icons/io";
 import { useTheme } from "../hook/useTheme";
+
+import Button from "../components/Button";
 
 const WhoIsSection = ({
   name,
@@ -9,7 +10,7 @@ const WhoIsSection = ({
   corporation,
   className,
   setOpenForHire,
-  setOpenConnect
+  setOpenConnect,
 }) => {
   const { color } = useTheme();
   return (
@@ -65,7 +66,7 @@ const WhoIsSection = ({
           <div className="flex flex-col gap-[4px] ">
             <h1 className="text-[14px] iceland-text">social</h1>
             <button
-            onClick={() => setOpenConnect(true)}
+              onClick={() => setOpenConnect(true)}
               className={clsx(
                 "relative font-extrabold text-[18px] big-text  border  p-[7px] text-left group transition-all duration-300",
                 color === "red"

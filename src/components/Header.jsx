@@ -1,8 +1,9 @@
+import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
+import { useTheme } from "../hook/useTheme";
+
 import { IoCloseSharp } from "react-icons/io5";
 import sound from "../audio/click2.mp3";
-import { useTheme } from "../hook/useTheme";
-import clsx from "clsx";
 
 const Header = ({ setOpenCredits, isSound }) => {
   const { color } = useTheme();

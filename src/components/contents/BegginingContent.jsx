@@ -1,10 +1,10 @@
+import { Suspense } from "react";
 import clsx from "clsx";
+
 import heroImg from "../../assets/images/heroPage/heroImg.png";
 
 import WhoIsSection from "../../mobile/WhoIsSection";
 import HeroButtons from "../../mobile/HeroButtons";
-
-import Navigate from "../Navigate";
 
 const BegginingContent = ({
   openContent,
@@ -22,6 +22,8 @@ const BegginingContent = ({
   musicSwitch,
   switchRef,
   audioRef,
+  NavigateLazy,
+
 }) => {
   return (
     <main className="section">
@@ -66,19 +68,21 @@ const BegginingContent = ({
       </div>
 
       {openModal && (
-        <Navigate
-          audioClick={audioClick}
-          soundClick={soundClick}
-          musicSwitch={musicSwitch}
-          isPlay={isPlay}
-          switchRef={switchRef}
-          soundSwitch={soundSwitch}
-          isSound={isSound}
-          audioRef={audioRef}
-          openContent={openContent}
-          color={color}
-          setOpenModal={setOpenModal}
-        />
+        <Suspense fallback={null}>
+          <NavigateLazy
+            color={color}
+            openContent={openContent}
+            audioRef={audioRef}
+            isSound={isSound}
+            soundSwitch={soundSwitch}
+            switchRef={switchRef}
+            isPlay={isPlay}
+            musicSwitch={musicSwitch}
+            soundClick={soundClick}
+            audioClick={audioClick}
+            setOpenModal={setOpenModal}
+          />
+        </Suspense>
       )}
     </main>
   );

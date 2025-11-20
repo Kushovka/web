@@ -1,4 +1,4 @@
-const HomePage = ({ setOpenSystem, homeMusic }) => {
+const HomePage = ({ homeMusic }) => {
   return (
     <section className="relative max-w-max mx-auto  py-[10px] px-[10px]">
       <div className="sphere-1"></div>

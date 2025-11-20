@@ -1,6 +1,6 @@
+import clsx from "clsx";
 import { CgDanger } from "react-icons/cg";
 import { useTheme } from "../hook/useTheme";
-import clsx from "clsx";
 
 const SettingsModal = ({ setOpenSettings }) => {
   const { color, toggleColor } = useTheme();

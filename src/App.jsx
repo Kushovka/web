@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+
+import bgMusic from "./audio/dark_fantasy.mp3";
+
 import HomePage from "./pages/HomePage";
 import HeroPage from "./pages/HeroPage";
-import bgMusic from "./audio/dark_fantasy.mp3";
 
 const App = () => {
   const [openSystem, setOpenSystem] = useState(false);

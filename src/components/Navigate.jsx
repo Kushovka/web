@@ -1,13 +1,14 @@
 import clsx from "clsx";
-import React from "react";
 import {
   IoCheckmarkSharp,
   IoCloseSharp,
   IoSettingsOutline,
 } from "react-icons/io5";
-import Button from "./Button";
+
 import sound from "../audio/click.mp3";
 import switchSound from "../audio/switch.mp3";
+
+import Button from "./Button";
 
 const Navigate = ({
   color,
@@ -20,7 +21,7 @@ const Navigate = ({
   musicSwitch,
   soundClick,
   audioClick,
-  setOpenModal
+  setOpenModal,
 }) => {
   return (
     <section className="fixed bg-black z-30 h-screen w-full p-[30px] left-0 top-0  flex flex-col gap-[15px]">
